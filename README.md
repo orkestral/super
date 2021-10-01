@@ -106,3 +106,13 @@ Get connection feedback by following codes:
 
 Download and save any message file with the functions below
 
+```javascript
+client.onMessage( async (message) => {
+  if (message.isMedia === true) {
+    const buffer = await client.decryptFile(message);
+
+    const saveFile = await client.decryptFileSave(message, 'filename')
+   
+  }
+});
+```
