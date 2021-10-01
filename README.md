@@ -65,7 +65,7 @@ const superchats = require("superchats");
 new superchats.create(
   "Marketing",
   {
-    license: "asjdh-efddff734-sdsdf834-233272",
+    license: "asjdh-efddff734-sdsdf834-233272", // Valid license to use Superchats
     welcomeScreen: true, // Show or hide welcome in terminal
     retries: 3, // Number of connection attempts
     connectTest: 10_000, // Number of seconds to check internet connection
