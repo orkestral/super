@@ -25,6 +25,7 @@ $ yarn add superchats
 - <a href="#multiples-sessions">Multiples Sessions</a>
 - <a href="#optional-parameters">Optional Parameters</a>
 - <a href="#download-and-save-files">Download and Save Files </a>
+- <a href="#message-sending-functions">Message Sending Functions </a>
 
 ## Getting Started
 
@@ -112,10 +113,18 @@ client.onMessage( async (message) => {
 
     //retrieve the file buffer for a given message
     const buffer = await client.decryptFile(message);
-    
+
     // Save the message file in the project's root or in a directory: './diretory/filename' don't forget to create the directory
     const saveFile = await client.decryptFileSave(message, 'filename')
    
   }
 });
 ```
+
+## Message Sending Functions
+
+We created the easiest way to send messages with **Superchats**
+
+</br>
+
+**Send Message Text**
