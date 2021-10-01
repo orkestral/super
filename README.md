@@ -523,6 +523,7 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
 ```javascript
 {
   session: 'Marketing',
+  status: 200,
   type: 'contact',
   id: '3EB00AFB1F60',
   to: '556181590153',
