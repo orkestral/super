@@ -26,7 +26,8 @@ $ yarn add superchats
 - <a href="#optional-parameters">Optional Parameters</a>
 - <a href="#download-and-save-files">Download and Save Files </a>
 - <a href="#message-sending-functions">Message Sending Functions </a>
-  - <a href="#send-message-text">Send Message Text </a>
+  - <a href="#send-message-text">Send Text </a>
+  - <a href="#send-message-image">Send Image </a>
   
 
 ## Getting Started
