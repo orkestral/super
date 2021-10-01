@@ -431,7 +431,7 @@ let response = await client.sendDocument("5561981590153", "http://www.orimi.com/
 > To reply to a message with document, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
-let response = await client.sendDocument("5561981590153", "http://www.orimi.com/pdf-test.pdf", '3EB01A690E67');
+let response = await client.sendDocument("5561981590153", "http://www.orimi.com/pdf-test.pdf", "Filename Optional", '3EB01A690E67');
 ```
 ##### Return with success
 ```javascript
