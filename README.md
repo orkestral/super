@@ -129,12 +129,20 @@ We created the easiest way to send messages with **Superchats**
 
 ### Send Message Text
 
-> Sending messages can be sent to the contact's number, example: 5561981590153 or to a group ID, example: 15815954040-1631239154
+> Sending messages can be sent to the contact's number, example: **5561981590153** or to a group ID, example: **15815954040-1631239154**
 
 ```javascript
 let response = await client.sendText("5561981590153", "Thanks for using Superchats!!!");
+
 ```
-##### Return
+
+To reply to a message, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01A690E67');
+```
+
+##### Return with success
 ```javascript
 {
   session: 'Marketing',
@@ -146,4 +154,14 @@ let response = await client.sendText("5561981590153", "Thanks for using Supercha
   isgroup: false,
   timestamp: 1633101992
 }
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 401,
+  type: 'text',
+  message: 'message of erro'
+  
 ```
