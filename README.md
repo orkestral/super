@@ -158,7 +158,7 @@ let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01
 ```javascript
 {
   session: 'Marketing',
-  status: 401,
+  status: 404,
   type: 'text',
   message: 'message of erro'
 }
