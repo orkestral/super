@@ -3,7 +3,7 @@
 <b>SuperChats</b> is a freemium library with unique features that control Whatsapp functions.
 With Superchats you can build service bots, multiservice chats or any system that uses whatsapp
 
-<b>Superchats</b> is a premium version of <a href='https://github.com/orkestral/venom'>Venom</a>, with exclusive features and support for companies and developers worldwide
+<b>Superchats</b> is a premium version of <a target="_blank" href='https://github.com/orkestral/venom'>Venom</a>, with exclusive features and support for companies and developers worldwide
 
 ## Quickstart
 
@@ -24,6 +24,7 @@ $ yarn add superchats
 - <a href="#getting-started">Getting Started</a>
 - <a href="#multiples-sessions">Multiples Sessions</a>
 - <a href="#optional-parameters">Optional Parameters</a>
+- <a href="#download-and-save-files">Download and Save Files </a>
 
 ## Getting Started
 
@@ -97,5 +98,11 @@ Get connection feedback by following codes:
 | `isDisconnected`    | The client has disconnected or has been disconnected                                                                                                                           |
 | `isLogout`           | The client has disconnected and removed the token from the device                                                                                                                              |
 | `isConnected`        | The client has successfully connected list                                                                                                                       |
-| `isSynced`        | The client lost synchronization with device                                                                                                                       |
-| `noSync`        | The client has sync again                                                                                                               |
+| `noSync`        | The client lost synchronization with device                                                                                                                       |
+| `isSynced`        | The client has sync again                                                                                                               |
+
+
+## Download and Save Files
+
+Download and save any message file with the functions below
+
