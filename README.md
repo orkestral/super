@@ -161,5 +161,5 @@ let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01
   status: 401,
   type: 'text',
   message: 'message of erro'
-  
+}
 ```
