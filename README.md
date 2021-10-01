@@ -68,7 +68,7 @@ new superchats.create(
     license: "asjdh-efddff734-sdsdf834-233272", // Valid license to use Superchats
     welcomeScreen: true, // Show or hide welcome in terminal
     retries: 3, // Number of connection attempts
-    connectTest: 10_000, // Number of seconds to check internet connection
+    connectTest: 10_000, // Number of milliseconds to check internet connection
     logQr: true // Logs QR automatically in terminal
   },
   (base64QR, asciiQR) => {
@@ -86,3 +86,15 @@ new superchats.create(
   });
 });
 ```
+## Callback Status Session
+
+Gets the return if the session is `isLogged` or `notLogged` or `browserClose` or `qrReadSuccess` or `qrReadFail` or `autocloseCalled` or `desconnectedMobile` or `deleteToken` or `chatsAvailable` or `deviceNotConnected` or `serverWssNotConnected` or `noOpenBrowser` or `Create session wss return "serverClose" case server for close`
+
+| Status                  | Condition                                                                                                                                                      |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isLogged`              | When the user is already logged in to the browser                                                                                                              |
+| `notLogged`             | When the user is not connected to the browser, it is necessary to scan the QR code through the cell phone in the option WhatsApp Web                           |                                      |
+| `isDisconnected`    | Client has desconnected in to mobile                                                                                                                           |
+| `isLogout`           | Client has desconnected in to wss                                                                                                                              |
+| `isConnected`        | When Venom is connected to the chat list                                                                                                                       |
+|
