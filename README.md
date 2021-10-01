@@ -92,9 +92,10 @@ Gets the return if the session is `isLogged` or `notLogged` or `browserClose` or
 
 | Status                  | Condition                                                                                                                                                      |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `isLogged`              | When the user is already logged in to the browser                                                                                                              |
-| `notLogged`             | When the user is not connected to the browser, it is necessary to scan the QR code through the cell phone in the option WhatsApp Web                           |                                      |
-| `isDisconnected`    | Client has desconnected in to mobile                                                                                                                           |
-| `isLogout`           | Client has desconnected in to wss                                                                                                                              |
-| `isConnected`        | When Venom is connected to the chat list                                                                                                                       |
-|
+| `isLogged`              | When the client already has a valid token and will not need to read the qrcode again                                                                                                              |
+| `notLogged`             | When the client does not have a valid token and needs to read the qr code again                           |                                      |
+| `isDisconnected`    | The client has disconnected or has been disconnected                                                                                                                           |
+| `isLogout`           | The client has disconnected and removed the token from the device                                                                                                                              |
+| `isConnected`        | The client has successfully connected list                                                                                                                       |
+| `isSynced`        | The client lost synchronization with device                                                                                                                       |
+| `noSync`        | The client has sync again                                                                                                               |
