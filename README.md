@@ -47,4 +47,4 @@ new superchats.create('Marketing',{
 ```
 ## Connection Events
 
-These events are started along with the connection and listen for events like: ** QRCODE, CONNECTION STATUS **
+These events are started along with the connection and listen for events like: **QRCODE, CONNECTION STATUS**
