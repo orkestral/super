@@ -3,4 +3,4 @@
 <b>SuperChats</b> is a freemium library with unique features that control Whatsapp functions.
 With Superchats you can build service bots, multiservice chats or any system that uses whatsapp
 
-<b>Superchats</b> is a premium version of Venom, with exclusive features and support for companies and developers worldwide
+<b>Superchats</b> is a premium version of <a href='https://github.com/orkestral/venom'>Venom</a>, with exclusive features and support for companies and developers worldwide
