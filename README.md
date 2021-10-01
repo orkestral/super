@@ -28,6 +28,7 @@ $ yarn add superchats
 - <a href="#message-sending-functions">Message Sending Functions </a>
   - <a href="#send-message-text">Send Text </a>
   - <a href="#send-message-image">Send Image </a>
+  - <a href="#send-message-sticker">Send Sticker </a>
   - <a href="#send-message-video">Send Video </a>
   - <a href="#send-message-audio">Send Audio </a>
   - <a href="#send-message-audio-voice">Send Voice </a>
@@ -225,6 +226,55 @@ let response = await client.sendImage("5561981590153", "https://github.com/orkes
   message: 'message of erro'
 }
 ```
+
+### Send Message Sticker
+
+> For image sticker submission, you can use URL or the local file path
+
+```javascript
+let response = await client.sendSticker("5561981590153", "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png");
+
+```
+
+> To reply to a message with image sticker, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendSticker("5561981590153", "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png", '3EB01A690E67');
+```
+
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'sticker',
+  id: '3EB07B2F281B',
+  to: '556181590153',
+  isgroup: false,
+  file: {
+    url: 'https://mmg.whatsapp.net/d/f/Ak39fUdprDRnKalZbWWyepoMbvNBlEOgIqZzY7GLEBil.enc',
+    mimetype: 'image/webp',
+    fileSha256: <Buffer ac b2 5f f4 af a4 2e 6d 9e 15 4a e7 58 c0 b3 0f df b6 0b 3f 27 cb 6c d9 55 dd 90 7f e8 92 b8 f7>,
+    fileLength: Long { low: 23001, high: 0, unsigned: true },
+    mediaKey: <Buffer 6e 96 87 f9 90 1e f5 ae cb 8a c6 9d 95 92 86 ca d3 1a 2a e1 d6 f1 1f f6 5e c3 56 1f 8f 14 1b 08>,
+    fileEncSha256: <Buffer 69 88 d6 36 1c 8b 5f 02 a1 8f e1 6b b2 41 3d da 68 77 b8 8b fd df f0 d0 73 5b bf 2c 84 ee 7e b4>,
+    directPath: ''
+  },
+  participant: '',
+  timestamp: 1633129024
+}
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'sticker',
+  message: 'message of erro'
+}
+```
+
 ### Send Message Video
 > For video submission, you can use URL or the local file path
 
