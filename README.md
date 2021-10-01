@@ -133,7 +133,7 @@ We created the easiest way to send messages with **Superchats**
 let response = await client.sendText("5561981590153", "Thanks for using Superchats!!!");
 ```
 ##### Return
-```json
+```javascript
 {
   session: 'Marketing',
   status: 200,
