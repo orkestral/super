@@ -456,7 +456,6 @@ let response = await client.sendDocument("5561981590153", "http://www.orimi.com/
   participant: '',
   timestamp: 1633121433
 }
-
 ```
 ##### Return with erro
 
@@ -465,6 +464,46 @@ let response = await client.sendDocument("5561981590153", "http://www.orimi.com/
   session: 'Marketing',
   status: 404,
   type: 'document',
+  message: 'message of erro'
+}
+```
+### Send Message Location
+
+```javascript
+let response = await client.sendLocation("5561981590153", -15.8413105, -48.0270346, 'title optional', 'address optional');
+
+```
+> To reply to a message with location, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendLocation("5561981590153", "http://www.orimi.com/pdf-test.pdf", "Filename Optional", '3EB01A690E67');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'location',
+  id: '3EB01A3D9A34',
+  to: '556181590153',
+  name: 'title optional',
+  address: 'address optional',
+  url: '',
+  thumbnail: <Buffer >,
+  latitude: -15.8413105,
+  longitude: -48.0270346,
+  isgroup: false,
+  participant: '',
+  timestamp: 1633122748
+}
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'location',
   message: 'message of erro'
 }
 ```
