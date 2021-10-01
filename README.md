@@ -163,3 +163,55 @@ let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01
   message: 'message of erro'
 }
 ```
+### Send Message Image
+
+> For image submission, you can use URL or the local file path
+
+```javascript
+let response = await client.sendImage("5561981590153", "https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Text optional");
+
+```
+
+> To reply to a message with image, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendImage("5561981590153", "https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Reply with image", '3EB01A690E67');
+```
+
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'image',
+  id: '3EB0FF4E2532',
+  to: '556181590153',
+  isgroup: false,
+  file: {
+    url: 'https://mmg.whatsapp.net/d/f/AmkmMjj4ZqieB6bDxS-Trox10ldAe5aIUZ5uQLutyKL8.enc',
+    caption: 'Text optional',
+    mimetype: 'image/jpeg',
+    fileSha256: <Buffer 11 ed 0d 21 f2 59 96 9a 65 cf 7e fa c1 57 a1 ee a2 c9 50 b4 0d 09 df df a8 9f e1 44 dd cf a6 a5>,
+    fileLength: Long { low: 15183, high: 0, unsigned: true },
+    height: 0,
+    width: 0,
+    mediaKey: <Buffer 17 0e ba 4b e6 81 69 eb 2b 30 28 59 5f a1 f4 42 7d fa 18 61 8a de 74 28 09 fc 92 79 7e 3d cc d4>,
+    fileEncSha256: <Buffer fe 62 a7 a4 d9 c3 ca 84 44 51 26 08 4c 7f fe 0a b1 13 f0 ad b9 9a ba 7e de a4 83 35 07 b0 5a 3e>,
+    directPath: '',
+    thumbnail: <Buffer >
+  },
+  participant: '',
+  timestamp: 1633106913
+}
+
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'image',
+  message: 'message of erro'
+}
+```
