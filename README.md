@@ -420,3 +420,51 @@ let response = await client.sendVoice("5561981590153", "https://file-examples-co
   message: 'message of erro'
 }
 ```
+
+### Send Message Document
+> For document submission, you can use URL or the local file path
+
+```javascript
+let response = await client.sendDocument("5561981590153", "http://www.orimi.com/pdf-test.pdf", "Filename Optional");
+
+```
+> To reply to a message with document, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendDocument("5561981590153", "http://www.orimi.com/pdf-test.pdf", '3EB01A690E67');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'document',
+  id: '3EB07C8C333C',
+  to: '556181590153',
+  isgroup: false,
+  file: {
+    url: 'https://mmg.whatsapp.net/d/f/ArJfVUhnzdW7qcBk8-T-mzRWsfMN6k_WOS81td_xJs6E.enc',
+    mimetype: 'application/pdf',
+    filename: 'Filename Optional',
+    fileSha256: <Buffer f6 ed cd 8a 1b 4f 7c b8 54 86 d0 c6 77 7f 91 74 ea db c4 d1 d0 d9 e5 ae ba 71 32 f3 0b 34 bc 3e>,
+    fileLength: Long { low: 20597, high: 0, unsigned: true },
+    mediaKey: <Buffer 1b 7d 59 ce fa 4b 3f 35 14 ca 36 1b bd ba f7 c7 ed 6a f7 3d ea c1 04 b0 7c a1 6b d4 4a ab 33 40>,
+    fileEncSha256: <Buffer 37 db ac 7a aa f5 c2 aa 13 c6 ec 18 9f 32 d7 5b 8a b3 0d fc 50 4f 9c ea aa 2f 8c ed 20 c9 f5 b0>,
+    directPath: '',
+    thumbnail: <Buffer >
+  },
+  participant: '',
+  timestamp: 1633121433
+}
+
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'document',
+  message: 'message of erro'
+}
+```
