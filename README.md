@@ -28,6 +28,12 @@ $ yarn add superchats
 - <a href="#message-sending-functions">Message Sending Functions </a>
   - <a href="#send-message-text">Send Text </a>
   - <a href="#send-message-image">Send Image </a>
+  - <a href="#send-message-image">Send Video </a>
+  - <a href="#send-message-image">Send Audio </a>
+  - <a href="#send-message-image">Send Voice </a>
+  - <a href="#send-message-image">Send Document </a>
+  - <a href="#send-message-image">Send Contact </a>
+  - <a href="#send-message-image">Send Link </a>
   
 
 ## Getting Started
@@ -215,6 +221,55 @@ let response = await client.sendImage("5561981590153", "https://github.com/orkes
   session: 'Marketing',
   status: 404,
   type: 'image',
+  message: 'message of erro'
+}
+```
+### Send Message Video
+> For video submission, you can use URL or the local file path
+
+```javascript
+let response = await client.sendVideo("5561981590153", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", "Text optional");
+
+```
+
+> To reply to a message with video, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendVideo("5561981590153", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", "Reply with video", '3EB01A690E67');
+```
+
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'video',
+  id: '3EB0612BED9B',
+  to: '556181590153',
+  isgroup: false,
+  file: {
+    url: 'https://mmg.whatsapp.net/d/f/AnrExTInFHkr446WcJoVnbHhhb1Tdmg8ort6g1SweEvS.enc',
+    caption: 'Text optional',
+    mimetype: 'video/mp4',
+    fileSha256: <Buffer 75 de 47 ac c8 b9 b5 c6 ef 56 56 6e eb 50 72 af c3 bd e0 a4 ff 4f f4 09 62 a4 b5 33 c1 26 db 46>,
+    fileLength: Long { low: 2252313, high: 0, unsigned: true },
+    mediaKey: <Buffer f7 91 19 c6 62 30 93 cc cb 83 b0 5a 20 f7 1c 5b 62 a6 36 fc 93 53 87 df 14 69 a6 14 db 9c ff 5e>,
+    fileEncSha256: <Buffer 49 d9 c9 e4 61 96 36 fc 7e ae 83 a4 da a1 70 5e d2 d5 f4 f1 74 15 52 26 84 8f f1 cb f4 54 82 3f>,
+    directPath: '',
+    thumbnail: <Buffer >
+  },
+  participant: '',
+  timestamp: 1633108332
+}
+
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'video',
   message: 'message of erro'
 }
 ```
