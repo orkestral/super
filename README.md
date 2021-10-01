@@ -47,7 +47,7 @@ new superchats.create('Marketing',{
 ```
 ## Connection Events
 
-After executing create() function, sSperchats will create an instance of whatsapp. If you are not logged in, it will print a QR code in the terminal. Scan it with your phone and you are ready to go!
+After executing create() function, **Superchats** will create an instance of whatsapp. If you are not logged in, it will print a QR code in the terminal. Scan it with your phone and you are ready to go!
 **Superchats** will remember the session so there is no need to authenticate everytime.
 Multiples sessions can be created at the same time by pasing a session name to create() function:
 
