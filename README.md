@@ -32,6 +32,7 @@ $ yarn add superchats
   - <a href="#send-message-audio">Send Audio </a>
   - <a href="#send-message-audio-voice">Send Voice </a>
   - <a href="#send-message-document">Send Document </a>
+  - <a href="#send-message-location">Send Location </a>
   - <a href="#send-message-contact">Send Contact </a>
   - <a href="#send-message-link">Send Link </a>
   
