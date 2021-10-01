@@ -127,4 +127,12 @@ We created the easiest way to send messages with **Superchats**
 
 </br>
 
-**Send Message Text**
+### Send Message Text
+
+```javascript
+let response = await client.sendText("5561981590153", "Thanks for using Superchats!!!");
+```
+##### Return
+`
+test
+`
