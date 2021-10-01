@@ -127,8 +127,6 @@ We created the easiest way to send messages with **Superchats**
 
 > Sending messages can be sent to the contact's number, example: **5561981590153** or to a group ID, example: **15815954040-1631239154**
 
-</br>
-
 ### Send Message Text
 
 ```javascript
