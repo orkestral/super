@@ -136,7 +136,7 @@ let response = await client.sendText("5561981590153", "Thanks for using Supercha
 
 ```
 
-> warning To reply to a message, use the id of the message you want to reply to in the last parameter, which is optional.
+> success To reply to a message, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
 let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01A690E67');
