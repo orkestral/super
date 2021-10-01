@@ -476,7 +476,7 @@ let response = await client.sendLocation("5561981590153", -15.8413105, -48.02703
 > To reply to a message with location, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
-let response = await client.sendLocation("5561981590153", "http://www.orimi.com/pdf-test.pdf", "Filename Optional", '3EB01A690E67');
+let response = await client.sendLocation("5561981590153", -15.8413105, -48.0270346, 'title optional', 'address optional', '3EB01A690E67');
 ```
 ##### Return with success
 ```javascript
