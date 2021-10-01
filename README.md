@@ -35,7 +35,7 @@ $ yarn add superchats
   - <a href="#send-message-document">Send Document </a>
   - <a href="#send-message-location">Send Location </a>
   - <a href="#send-contact">Send Contact </a>
-  - <a href="#send-message-link">Send Link </a>
+  - <a href="#send-link">Send Link </a>
   
 
 ## Getting Started
@@ -594,6 +594,41 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   session: 'Marketing',
   status: 404,
   type: 'contact',
+  message: 'message of erro'
+}
+```
+### Send Link
+
+```javascript
+  let response = await client.sendLink("5561981590153", "https://music.youtube.com/watch?v=mqA5iMLsME8&feature=share", 'Description optional');
+
+```
+> To reply to a message with link, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+  let response = await client.sendLink("5561981590153", "https://music.youtube.com/watch?v=mqA5iMLsME8&feature=share", 'Description optional', '3EB01A690E67');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'link',
+  id: '3EB0746BE9A9',
+  to: '556181590153',
+  content: 'https://music.youtube.com/watch?v=mqA5iMLsME8&feature=share\n' +
+    'Description optional',
+  isgroup: false,
+  timestamp: 1633130029
+}
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'link',
   message: 'message of erro'
 }
 ```
