@@ -28,12 +28,12 @@ $ yarn add superchats
 - <a href="#message-sending-functions">Message Sending Functions </a>
   - <a href="#send-message-text">Send Text </a>
   - <a href="#send-message-image">Send Image </a>
-  - <a href="#send-message-image">Send Video </a>
-  - <a href="#send-message-image">Send Audio </a>
-  - <a href="#send-message-image">Send Voice </a>
-  - <a href="#send-message-image">Send Document </a>
-  - <a href="#send-message-image">Send Contact </a>
-  - <a href="#send-message-image">Send Link </a>
+  - <a href="#send-message-video">Send Video </a>
+  - <a href="#send-message-audio">Send Audio </a>
+  - <a href="#send-message-voice">Send Voice </a>
+  - <a href="#send-message-document">Send Document </a>
+  - <a href="#send-message-contact">Send Contact </a>
+  - <a href="#send-message-link">Send Link </a>
   
 
 ## Getting Started
