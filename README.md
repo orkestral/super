@@ -22,6 +22,7 @@ $ yarn add superchats
 
 - <a href="#getting-started">Getting Started</a>
 - <a href="#multiples-sessions">Multiples Sessions</a>
+- <a href="#optional-parameters">Optional Parameters</a>
 
 
 ## Getting Started
@@ -59,4 +60,6 @@ new superchats.create('sales').then((salesClient) => {...});
 new superchats.create('support').then((supportClient) => {...});
 ```
 
-These events are started along with the connection and listen for events like: **QRCODE, CONNECTION STATUS**
+## Optional Parameters
+
+Optional parameters are started along with the connection as events of **QRCODE and CONNECTION STATUS**, plus extra options
