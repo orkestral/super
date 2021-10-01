@@ -21,7 +21,7 @@ $ yarn add superchats
 ## Documentations
 
 - <a href="#getting-started">Getting Started</a>
-- <a href="#connection-events">Connection Events</a>
+- <a href="#multiples-sessions">Multiples Sessions</a>
 
 
 ## Getting Started
@@ -45,7 +45,7 @@ new superchats.create('Marketing',{
 
 
 ```
-## Connection Events
+## Multiples Sessions
 
 After executing create() function, **Superchats** will create an instance of whatsapp. If you are not logged in, it will print a QR code in the terminal. Scan it with your phone and you are ready to go!
 **Superchats** will remember the session so there is no need to authenticate everytime.
