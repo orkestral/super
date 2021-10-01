@@ -109,8 +109,11 @@ Download and save any message file with the functions below
 ```javascript
 client.onMessage( async (message) => {
   if (message.isMedia === true) {
-    const buffer = await client.decryptFile(message);
 
+    //retrieve the file buffer for a given message
+    const buffer = await client.decryptFile(message);
+    
+    // Save the message file in the project's root or in a directory: './diretory/filename' don't forget to create the directory
     const saveFile = await client.decryptFileSave(message, 'filename')
    
   }
