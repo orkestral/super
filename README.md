@@ -7,8 +7,40 @@ With Superchats you can build service bots, multiservice chats or any system tha
 
 ## Quickstart
 
-Follow the commands listed below.
+Run the following command to ensure you have SuperChats installed:
 
 ```bash
 $ npm install superchats
+```
+or using yarn:
+
+```bash
+$ yarn add superchats
+```
+
+## Documentations
+
+- <a href="#getting-started">Getting Started</a>
+
+
+## Getting Started
+
+```javascript
+
+const superchats = require('superchats');
+
+new superchats.create('Marketing',{
+  license: 'asjdh-efddff734-sdsdf834-233272',
+}).then(async client => {
+
+   await client.onMessage(async message => {
+     if(message.type == 'text' && message.content == 'hi'){
+     await client.sendText('5561981590153', 'Thanks for using Superchats!!!')
+     }
+    
+   })
+
+})
+
+
 ```
