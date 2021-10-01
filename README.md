@@ -33,7 +33,7 @@ $ yarn add superchats
   - <a href="#send-message-audio-voice">Send Voice </a>
   - <a href="#send-message-document">Send Document </a>
   - <a href="#send-message-location">Send Location </a>
-  - <a href="#send-message-contact">Send Contact </a>
+  - <a href="#send-contact">Send Contact </a>
   - <a href="#send-message-link">Send Link </a>
   
 
@@ -505,6 +505,44 @@ let response = await client.sendLocation("5561981590153", -15.8413105, -48.02703
   session: 'Marketing',
   status: 404,
   type: 'location',
+  message: 'message of erro'
+}
+```
+### Send Contact
+
+```javascript
+let response = await client.sendContact("5561981590153",'Name of Contact', '15815954040');
+
+```
+> To reply to a message with contact, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+let response = await client.sendContact("5561981590153",'Name of Contact', '15815954040', '3EB01A690E67');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  type: 'contact',
+  id: '3EB00AFB1F60',
+  to: '556181590153',
+  display: 'Name of Contact',
+  vcard: 'BEGIN:VCARD\n' +
+    'VERSION:3.0\n' +
+    'FN:Name of Contact\n' +
+    'TEL;type=CELL;type=VOICE;waid=15815954040:+15815954040\n' +
+    'END:VCARD',
+  isgroup: false,
+  timestamp: 1633128149
+}
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'contact',
   message: 'message of erro'
 }
 ```
