@@ -12,6 +12,7 @@ Run the following command to ensure you have SuperChats installed:
 ```bash
 $ npm install superchats
 ```
+
 or using yarn:
 
 ```bash
@@ -24,28 +25,22 @@ $ yarn add superchats
 - <a href="#multiples-sessions">Multiples Sessions</a>
 - <a href="#optional-parameters">Optional Parameters</a>
 
-
 ## Getting Started
 
 ```javascript
+const superchats = require("superchats");
 
-const superchats = require('superchats');
-
-new superchats.create('Marketing',{
-  license: 'asjdh-efddff734-sdsdf834-233272',
-}).then(async client => {
-
-   await client.onMessage(async message => {
-     if(message.type == 'text' && message.content == 'hi'){
-     await client.sendText('5561981590153', 'Thanks for using Superchats!!!')
-     }
-    
-   })
-
-})
-
-
+new superchats.create("Marketing", {
+  license: "asjdh-efddff734-sdsdf834-233272",
+}).then(async (client) => {
+  await client.onMessage(async (message) => {
+    if (message.type == "text" && message.content == "hi") {
+      await client.sendText("5561981590153", "Thanks for using Superchats!!!");
+    }
+  });
+});
 ```
+
 ## Multiples Sessions
 
 After executing create() function, **Superchats** will create an instance of whatsapp. If you are not logged in, it will print a QR code in the terminal. Scan it with your phone and you are ready to go!
@@ -63,3 +58,31 @@ new superchats.create('support').then((supportClient) => {...});
 ## Optional Parameters
 
 Optional parameters are started along with the connection as events of **QRCODE and CONNECTION STATUS**, plus extra options
+
+```javascript
+const superchats = require("superchats");
+
+new superchats.create(
+  "Marketing",
+  {
+    license: "asjdh-efddff734-sdsdf834-233272",
+    welcomeScreen: true, // Show or hide welcome in terminal
+    retries: 3, // Number of connection attempts
+    connectTest: 10_000, // Number of seconds to check internet connection
+    logQr: true // Logs QR automatically in terminal
+  },
+  (base64QR, asciiQR) => {
+    console.log("base64 string qrcode: ", base64QR);
+    console.log("Terminal image of qrcode in caracter ascii: ", asciiQR);
+  },
+  (statusSession) => {
+    console.log("Status Session: ", statusSession);
+  }
+).then(async (client) => {
+  await client.onMessage(async (message) => {
+    if (message.type == "text" && message.content == "hi") {
+      await client.sendText("5561981590153", "Thanks for using Superchats!!!");
+    }
+  });
+});
+```
