@@ -21,6 +21,7 @@ $ yarn add superchats
 ## Documentations
 
 - <a href="#getting-started">Getting Started</a>
+- <a href="#connection-events">Connection Events</a>
 
 
 ## Getting Started
@@ -44,3 +45,6 @@ new superchats.create('Marketing',{
 
 
 ```
+## Connection Events
+
+These events are started along with the connection and listen for events like: ** QRCODE, CONNECTION STATUS **
