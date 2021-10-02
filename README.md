@@ -41,6 +41,7 @@ $ yarn add superchats
 - <a href="#delete-message">Delete Message </a>
 - <a href="#forwarding-message">Forwarding Message </a>
 - <a href="#mute-chat">Mute Chat </a>
+- <a href="#archive-chat">Archive Chat </a>
   
 
 ## Getting Started
