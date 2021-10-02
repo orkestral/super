@@ -801,7 +801,7 @@ Return with erro
 }
 ```
 
-## Mute Contact
+## Mute Chat
 
 > Silence or remove the silence of a particular chat for a specific period
 
