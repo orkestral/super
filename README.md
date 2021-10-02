@@ -678,3 +678,46 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   message: 'message of erro'
 }
 ```
+### Send Message List
+> Attention! This function does not work if connected to a WhatsApp Business account
+
+```javascript
+
+  const options = [
+ {title: 'Title of Option', description: "description", rowId:"id1"},
+ {title: 'Title of Option', description: "description", rowId:"id2"}
+]
+
+  let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional');
+
+```
+> To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+  let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional', '3EB01A690E67');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'list',
+  id: '3EB0F92B3F1D',
+  to: '556181590153',
+  description: 'Description optional',
+  btnName: 'Name of Button',
+  sections: [ Section { rows: [Array], title: 'Name of section' } ],
+  isgroup: false,
+  timestamp: 1633143340
+}
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'list',
+  message: 'message of erro'
+}
+```
