@@ -42,6 +42,7 @@ $ yarn add superchats
 - <a href="#forwarding-message">Forwarding Message </a>
 - <a href="#mute-chat">Mute Chat </a>
 - <a href="#archive-chat">Archive Chat </a>
+- <a href="#delete-chat">Delete Chat </a>
   
 
 ## Getting Started
@@ -869,6 +870,35 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'archive-chat',
+  message: 'message of erro'
+}
+```
+## Delete Chat
+
+> Delete a specific chat or group
+
+
+**Archive**
+```javascript
+//number of chat or group
+let response = await client.deleteChat("5561981590153")
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'delete-chat',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'delete-chat',
   message: 'message of erro'
 }
 ```
