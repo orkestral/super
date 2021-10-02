@@ -39,6 +39,7 @@ $ yarn add superchats
   - <a href="#send-message-buttons">Send Buttons </a>
   - <a href="#send-message-list">Send List </a>
 - <a href="#delete-message">Delete Message </a>
+- <a href="#forwarding-message">Forwarding Message </a>
   
 
 ## Getting Started
