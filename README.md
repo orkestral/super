@@ -836,3 +836,38 @@ Return with erro
   message: 'message of erro'
 }
 ```
+## Archive Chat
+
+> Archive or unarchive a specific chat
+
+
+**Archive**
+```javascript
+//number of chat, true
+let response = await client.archiveChat("5561981590153", true)
+
+```
+**Unarchive**
+```javascript
+//number of chat, false
+let response = await client.archiveChat("5561981590153", false)
+
+```
+
+Return with success 
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'archive-chat',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'archive-chat',
+  message: 'message of erro'
+}
+```
