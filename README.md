@@ -744,8 +744,8 @@ Return with success
 ```javascript
 { 
  session: 'Marketing',
- type: 'delete-chat-me',
  status: 200 
+ type: 'delete-chat-me'
 }
 ```
 Return with erro
