@@ -689,13 +689,14 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
  {title: 'Title of Option', description: "description", rowId:"id1"},
  {title: 'Title of Option', description: "description", rowId:"id2"}
 ]
-
+//number of contact, name of button, name of section, options <array>, description: optional
   let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional');
 
 ```
 > To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
+  //number of contact, name of button, name of section, options <array>, description: optional, id message for reply
   let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional', '3EB01A690E67');
 ```
 ##### Return with success
@@ -731,12 +732,14 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
 Delete message only for you
 
 ```javascript
+//number of chat, id of message
 let response = await client.deleteMessageMe("5561981590153", "3EB071B7776A")
 
 ```
 Delete Message to everyone on chat
 
 ```javascript
+//number of chat, id of message
 let response = await client.deleteMessageAll("5561981590153", "3EB071B7776A")
 
 ```
