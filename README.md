@@ -43,6 +43,7 @@ $ yarn add superchats
 - <a href="#mute-chat">Mute Chat </a>
 - <a href="#archive-chat">Archive Chat </a>
 - <a href="#delete-chat">Delete Chat </a>
+- <a href="#pin-chat">Pin Chat </a>
   
 
 ## Getting Started
@@ -899,6 +900,42 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'delete-chat',
+  message: 'message of erro'
+}
+```
+## Pin Chat
+
+> Pin or unpin a specific chat or group
+
+
+**Pin**
+```javascript
+//number of chat, true
+let response = await client.pinChat("5561981590153", true)
+
+```
+**Unpin**
+```javascript
+//number of chat, false
+let response = await client.pinChat("5561981590153", false)
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'pin-chat',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'pin-chat',
   message: 'message of erro'
 }
 ```
