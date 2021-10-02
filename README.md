@@ -40,6 +40,7 @@ $ yarn add superchats
   - <a href="#send-message-list">Send List </a>
 - <a href="#delete-message">Delete Message </a>
 - <a href="#forwarding-message">Forwarding Message </a>
+- <a href="#mute-chat">Mute Chat </a>
   
 
 ## Getting Started
@@ -689,7 +690,7 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
  {title: 'Title of Option', description: "description", rowId:"id1"},
  {title: 'Title of Option', description: "description", rowId:"id2"}
 ]
-//number of contact, name of button, name of section, options <array>, description: optional
+  //number of contact, name of button, name of section, options <array>, description: optional
   let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional');
 
 ```
@@ -796,6 +797,42 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'forwarding',
+  message: 'message of erro'
+}
+```
+
+## Mute Contact
+
+> Silence or remove the silence of a particular chat for a specific period
+
+
+**Mute**
+```javascript
+//number of chat, timer: ['hour', 'week', 'ever']
+let response = await client.muteChat("5561981590153", "hour")
+
+```
+**Unmute**
+```javascript
+//number of chat
+let response = await client.unmuteChat("5561981590153")
+
+```
+
+Return with success 
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'mute-chat',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'mute-chat',
   message: 'message of erro'
 }
 ```
