@@ -731,11 +731,11 @@ Delete message only for you
 
 ```javascript
 client.deleteMessageMe("5561981590153", "3EB071B7776A")
-});
+
 ```
 Delete Message to everyone on chat
 
 ```javascript
 client.deleteMessageAll("5561981590153", "3EB071B7776A")
-});
+
 ```
