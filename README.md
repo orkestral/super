@@ -730,12 +730,30 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
 Delete message only for you
 
 ```javascript
-client.deleteMessageMe("5561981590153", "3EB071B7776A")
+let response = await client.deleteMessageMe("5561981590153", "3EB071B7776A")
 
 ```
 Delete Message to everyone on chat
 
 ```javascript
-client.deleteMessageAll("5561981590153", "3EB071B7776A")
+let response = await client.deleteMessageAll("5561981590153", "3EB071B7776A")
 
+```
+
+Return with success 
+```javascript
+{ 
+ session: 'Marketing',
+ type: 'delete-chat-me',
+ status: 200 
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'delete-chat-me',
+  message: 'message of erro'
+}
 ```
