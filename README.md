@@ -34,15 +34,16 @@ $ yarn add superchats
   - <a href="#send-message-audio-voice">Send Voice </a>
   - <a href="#send-message-document">Send Document </a>
   - <a href="#send-message-location">Send Location </a>
-  - <a href="#send-contact">Send Contact </a>
-  - <a href="#send-link">Send Link </a>
+  - <a href="#send-message-contact">Send Contact </a>
+  - <a href="#send-message-link">Send Link </a>
+  - <a href="#send-message-buttons">Send Buttons </a>
+  - <a href="#send-message-list">Send List </a>
   
 
 ## Getting Started
 
 ```javascript
 const superchats = require("superchats");
-
 new superchats.create("Marketing", {
   license: "asjdh-efddff734-sdsdf834-233272",
 }).then(async (client) => {
@@ -558,7 +559,7 @@ let response = await client.sendLocation("5561981590153", -15.8413105, -48.02703
   message: 'message of erro'
 }
 ```
-### Send Contact
+### Send Message Contact
 
 ```javascript
 let response = await client.sendContact("5561981590153",'Name of Contact', '15815954040');
@@ -597,7 +598,7 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   message: 'message of erro'
 }
 ```
-### Send Link
+### Send Message Link
 
 ```javascript
   let response = await client.sendLink("5561981590153", "https://music.youtube.com/watch?v=mqA5iMLsME8&feature=share", 'Description optional');
@@ -629,6 +630,51 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   session: 'Marketing',
   status: 404,
   type: 'link',
+  message: 'message of erro'
+}
+```
+### Send Message Buttons
+
+```javascript
+
+  const buttons = [
+    {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
+    {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1}
+  ]
+
+  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional');
+
+```
+> To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional', '3EB01A690E67');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'buttons',
+  id: '3EB071B7776A',
+  to: '556181590153',
+  title: 'title of message',
+  description: 'Description optional',
+  buttons: [
+    Button { buttonId: 'id1', buttonText: [ButtonText], type: 1 },
+    Button { buttonId: 'id2', buttonText: [ButtonText], type: 1 }
+  ],
+  isgroup: false,
+  timestamp: 1633142713
+}
+```
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'buttons',
   message: 'message of erro'
 }
 ```
