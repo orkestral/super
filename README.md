@@ -757,3 +757,41 @@ Return with erro
   message: 'message of erro'
 }
 ```
+## Forwarding Message
+
+> Message forwarding for any contact
+
+
+
+
+```javascript
+//number of chat, id of message, number chat for send
+let response = await client.forwardMessage("5561981590153", "3EB042FA6555", "15815954040")
+
+```
+
+Return with success 
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'forwarding',
+  subtype: 'text',
+  id: '3EB042FA6555',
+  from: '15815954040',
+  text: 'oi',
+  isgroup: false,
+  reply: { id: undefined },
+  participant: '',
+  timestamp: 1633147282
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'forwarding',
+  message: 'message of erro'
+}
+```
