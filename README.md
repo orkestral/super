@@ -38,6 +38,7 @@ $ yarn add superchats
   - <a href="#send-message-link">Send Link </a>
   - <a href="#send-message-buttons">Send Buttons </a>
   - <a href="#send-message-list">Send List </a>
+- <a href="#delete-message">Delete Message </a>
   
 
 ## Getting Started
@@ -720,4 +721,21 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   type: 'list',
   message: 'message of erro'
 }
+```
+
+## Delete Message
+
+> Delete messages in chats only for you or for all
+
+Delete message only for you
+
+```javascript
+client.deleteMessageMe("5561981590153", "3EB071B7776A")
+});
+```
+Delete Message to everyone on chat
+
+```javascript
+client.deleteMessageAll("5561981590153", "3EB071B7776A")
+});
 ```
