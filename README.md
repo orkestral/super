@@ -842,6 +842,33 @@ Return with erro
   message: 'message of erro'
 }
 ```
+## Get Block List
+
+> List All Contacts Blocking
+
+
+```javascript
+let response = await client.getBlockList()
+
+```
+
+Return with success 
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-block-list',
+  list: [ '5561986268199', '5561998745252' ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-block-list',
+  message: 'message of erro'
+}
+```
 
 ## Mute Chat
 
