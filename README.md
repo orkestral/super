@@ -56,6 +56,13 @@ $ yarn add superchats
 - <a href="#set-picture">Set Picture </a>
 - <a href="#get-number-profile">Get Number Profile </a>
 - <a href="#groups-functions">Groups Functions </a>
+  - <a href="#create-group">Create Group</a>
+  - <a href="#add-participants-group">Add Participants Group</a>
+  - <a href="#add=admins-group">Add Admins Group</a>
+  - <a href="#change-name-of-group">Change Name of Group</a>
+  - <a href="#change-name-of-group">Change Description of Group</a>
+  - <a href="#leave-group">Leave Group</a>
+  - <a href="#groups-group-link">Get Group Link</a>
   
 
 ## Getting Started
@@ -1213,3 +1220,215 @@ Return with erro
 ## Groups Functions
 
 We created the easiest way to create groups with **Superchats**
+
+## Create Group
+
+> Create a group with participants
+
+
+```javascript
+//name of group, array with number of contacts
+let response = await client.createGroup("Name Group", ["556181590153", "5561981819855"])
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'create-group',
+  groupId: "15815954040-1631239154"
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'create-group',
+  message: 'message of erro'
+}
+```
+
+## Add Participants Group
+
+> Add participants in group
+
+
+```javascript
+//id of group, array with number of contacts
+let response = await client.addParticipantsGroup("15815954040-1631239154", ["556181590153", "5561981819855"])
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'add-participants-group',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'add-participants-group',
+  message: 'message of erro'
+}
+```
+## Add Admins Group
+
+> Add or Remove participants of group as admin
+
+
+```javascript
+//id of group, array with number of contacts
+let response = await client.addGroupAdmins("15815954040-1631239154", ["556181590153", "5561981819855"])
+
+```
+```javascript
+//id of group, array with number of contacts
+let response = await client.removeGroupAdmins("15815954040-1631239154", ["556181590153", "5561981819855"])
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'add-group-admins',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'add-group-admins',
+  message: 'message of erro'
+}
+```
+## Change Name of Group
+
+> Change name of group
+
+
+```javascript
+//id of group, name group
+let response = await client.groupTitle("15815954040-1631239154", "new name of group")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'group-title',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'group-title',
+  message: 'message of erro'
+}
+```
+## Change Description of Group
+
+> Change description of group
+
+
+```javascript
+//id of group, name group
+let response = await client.groupDescription("15815954040-1631239154", "description of group")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'group-description',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'group-description',
+  message: 'message of erro'
+}
+```
+## Leave Group
+
+> Leaves a group specified
+
+
+```javascript
+//id of group
+let response = await client.leaveGroup("15815954040-1631239154")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'leave-group',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'leave-group',
+  message: 'message of erro'
+}
+```
+
+## Get Group Link
+
+> Returns the link from a specified group
+
+
+```javascript
+//id of group
+let response = await client.getGroupLink("15815954040-1631239154")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'get-group-link',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-group-link',
+  message: 'message of erro'
+}
+```
