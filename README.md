@@ -41,6 +41,7 @@ $ yarn add superchats
 - <a href="#delete-message">Delete Message </a>
 - <a href="#forwarding-message">Forwarding Message </a>
 - <a href="#mute-chat">Mute Chat </a>
+- <a href="#get-chats">Get Chats </a>
 - <a href="#archive-chat">Archive Chat </a>
 - <a href="#delete-chat">Delete Chat </a>
 - <a href="#pin-chat">Pin Chat </a>
@@ -802,6 +803,41 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'forwarding',
+  message: 'message of erro'
+}
+```
+
+## Get Chats
+
+> List All Chats of Conversations
+
+
+```javascript
+let response = await client.getChats()
+
+```
+
+Return with success 
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-chats',
+  chats: [
+    { id: '556181590153', name: 'Joe Dutra', mute: '0', spam: 'false' },
+      id: '5511982743910-1596072761',
+      name: 'Venom Support',
+      mute: '0',
+      spam: 'false'
+    }
+  ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-chats',
   message: 'message of erro'
 }
 ```
