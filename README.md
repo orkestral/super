@@ -1059,13 +1059,13 @@ Return with erro
 
 **Block**
 ```javascript
-//number of chat, true
+//number of chat
 let response = await client.blockContact("5561981590153")
 
 ```
 **Unblock**
 ```javascript
-//number of chat, false
+//number of chat
 let response = await client.unblockContact("5561981590153")
 
 ```
@@ -1094,7 +1094,7 @@ Return with erro
 
 
 ```javascript
-//number of chat, true
+//number of chat
 let response = await client.getProfileStatus("5561981590153")
 
 ```
@@ -1123,7 +1123,7 @@ Return with erro
 
 
 ```javascript
-//number of chat, true
+//number of chat
 let response = await client.getPicture("5561981590153")
 
 ```
