@@ -1124,7 +1124,7 @@ Return with erro
 
 ```javascript
 //number of chat, true
-let response = await client.getProfileStatus("5561981590153")
+let response = await client.getPicture("5561981590153")
 
 ```
 
