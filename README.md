@@ -1519,13 +1519,13 @@ Return with erro
 
 > Get info from a specified group
 
-**Arrow sending messages in group only for admins**
+**Set sending messages in group only for admins**
 ```javascript
 //id of group, 
 let response = await client.setGroupSettings("15815954040-1631239154", "message", true)
 
 ```
-**Arrow change settings in group only for admins**
+**Set change settings in group only for admins**
 ```javascript
 //id of group, 
 let response = await client.setGroupSettings("15815954040-1631239154", "settings", true)
