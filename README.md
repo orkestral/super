@@ -1152,7 +1152,7 @@ Return with erro
 ```
 ## Set Picture
 
-> Set image of profile or group
+> Set image for profile or group
 
 
 ```javascript
