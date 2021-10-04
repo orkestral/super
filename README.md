@@ -61,6 +61,7 @@ $ yarn add superchats
   - <a href="#add=admins-group">Add Admins Group</a>
   - <a href="#change-name-of-group">Change Name of Group</a>
   - <a href="#change-name-of-group">Change Description of Group</a>
+  - <a href="#join-group">Join Group</a>
   - <a href="#leave-group">Leave Group</a>
   - <a href="#get-group-link">Get Group Link</a>
   - <a href="#revoke-group-link">Revoke Group Link</a>
@@ -1374,6 +1375,35 @@ Return with erro
   message: 'message of erro'
 }
 ```
+## Join Group
+
+> Join a group specified
+
+
+```javascript
+//id of group
+let response = await client.joinGroup("15815954040-1631239154")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'join-group',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'join-group',
+  message: 'message of erro'
+}
+```
 ## Leave Group
 
 > Leaves a group specified
@@ -1431,6 +1461,55 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'revoke-group-link',
+  message: 'message of erro'
+}
+```
+## Info Group
+
+> Get info from a specified group
+
+
+```javascript
+//id of group
+let response = await client.infoGroup("15815954040-1631239154")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'info-group',
+  status: 200,
+  id: '15795662985-1631581942',
+  owner: '15795662985@c.us',
+  title: 'Teste Grupo Live',
+  create: 1631581942,
+  participants: [
+    {
+      id: '556181590153',
+      name: 'Joe Dutra',
+      short: 'Joe',
+      isAdmin: false,
+      isSuperAdmin: false
+    },
+    {
+      id: '5521991977392',
+      name: 'Israel - Fabrica de Sonhos',
+      short: 'Israel - Fabrica',
+      isAdmin: false,
+      isSuperAdmin: false
+    }
+  ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'info-group',
   message: 'message of erro'
 }
 ```
