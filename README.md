@@ -52,6 +52,8 @@ $ yarn add superchats
 - <a href="#pin-chat">Pin Chat </a>
 - <a href="#block-contact">Block Contact </a>
 - <a href="#get-profile-status">Get Profile Status </a>
+- <a href="#get-picture">Get Picture </a>
+- <a href="#get-number-profile">Get Number Profile </a>
 - <a href="#groups-functions">Groups Functions </a>
   
 
@@ -1143,6 +1145,36 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'get-picture',
+  message: 'message of erro'
+}
+```
+## Get Number Profile
+
+> Checks if a number exists in the WhastApp
+
+```javascript
+//number of chat
+let response = await client.getNumberProfile("5561981590153")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-number-profile',
+  id: '556181590153',
+  isBusiness: false,
+  exist: true
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-number-profile',
   message: 'message of erro'
 }
 ```
