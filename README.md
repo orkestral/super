@@ -53,6 +53,7 @@ $ yarn add superchats
 - <a href="#block-contact">Block Contact </a>
 - <a href="#get-profile-status">Get Profile Status </a>
 - <a href="#get-picture">Get Picture </a>
+- <a href="#set-picture">Set Picture </a>
 - <a href="#get-number-profile">Get Number Profile </a>
 - <a href="#groups-functions">Groups Functions </a>
   
@@ -1135,6 +1136,7 @@ Return with success
 ```javascript
 {
   session: 'Marketing',
+  status: 200,
   type: 'get-picture',
   picture: 'https://pps.whatsapp.net/v/t61.24694-24/166060433_390988636021500_3494454124066997603_n.jpg?ccb=11-4&oh=453e672ddc35e64ca123439f7a89d7d2&oe=615EAAAF'
 }
@@ -1145,6 +1147,35 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'get-picture',
+  message: 'message of erro'
+}
+```
+## Set Picture
+
+> Set image of profile or group
+
+
+```javascript
+//number of chat, file local path
+let response = await client.setPicture("5561981590153", "./image-profile.png")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'set-picture'
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'set-picture',
   message: 'message of erro'
 }
 ```
