@@ -41,6 +41,9 @@ $ yarn add superchats
 - <a href="#get-all-contacts">Get All Contacts </a>
 - <a href="#delete-message">Delete Message </a>
 - <a href="#forwarding-message">Forwarding Message </a>
+- <a href="#get-chat-messages">Get Chat Messages </a>
+- <a href="#get-chat-all-messages">Get Chat All Messages </a>
+- <a href="#get-message-by-id">Get Message By Id</a>
 - <a href="#mute-chat">Mute Chat </a>
 - <a href="#get-chats">Get Chats </a>
 - <a href="#get-block-list">Get Block List </a>
@@ -48,6 +51,7 @@ $ yarn add superchats
 - <a href="#delete-chat">Delete Chat </a>
 - <a href="#pin-chat">Pin Chat </a>
 - <a href="#block-contact">Block Contact </a>
+- <a href="#get-profile-status">Get Profile Status </a>
 - <a href="#groups-functions">Groups Functions </a>
   
 
@@ -1081,6 +1085,64 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'block-contact',
+  message: 'message of erro'
+}
+```
+## Get Profile Status
+
+> Displays the text of the status of a specific contact
+
+
+```javascript
+//number of chat, true
+let response = await client.getProfileStatus("5561981590153")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-profile-status',
+  status: 'Que Deus seja sempre louvado em nossas vidas'
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-profile-status',
+  message: 'message of erro'
+}
+```
+## Get Picture
+
+> Displays the image of a specific contact
+
+
+```javascript
+//number of chat, true
+let response = await client.getProfileStatus("5561981590153")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-picture',
+  picture: 'https://pps.whatsapp.net/v/t61.24694-24/166060433_390988636021500_3494454124066997603_n.jpg?ccb=11-4&oh=453e672ddc35e64ca123439f7a89d7d2&oe=615EAAAF'
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-profile-status',
   message: 'message of erro'
 }
 ```
