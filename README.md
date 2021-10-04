@@ -42,6 +42,7 @@ $ yarn add superchats
 - <a href="#forwarding-message">Forwarding Message </a>
 - <a href="#mute-chat">Mute Chat </a>
 - <a href="#get-chats">Get Chats </a>
+- <a href="#get-block-list">Get Block List </a>
 - <a href="#archive-chat">Archive Chat </a>
 - <a href="#delete-chat">Delete Chat </a>
 - <a href="#pin-chat">Pin Chat </a>
