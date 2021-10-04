@@ -62,7 +62,8 @@ $ yarn add superchats
   - <a href="#change-name-of-group">Change Name of Group</a>
   - <a href="#change-name-of-group">Change Description of Group</a>
   - <a href="#leave-group">Leave Group</a>
-  - <a href="#groups-group-link">Get Group Link</a>
+  - <a href="#get-group-link">Get Group Link</a>
+  - <a href="#revoke-group-link">Revoke Group Link</a>
   
 
 ## Getting Started
@@ -1403,14 +1404,14 @@ Return with erro
 }
 ```
 
-## Get Group Link
+## Revoke Group Link
 
-> Returns the link from a specified group
+> Revoke link from a specified group
 
 
 ```javascript
 //id of group
-let response = await client.getGroupLink("15815954040-1631239154")
+let response = await client.revokeGroupLink("15815954040-1631239154")
 
 ```
 
@@ -1420,7 +1421,8 @@ Return with success
 {
   session: 'Marketing',
   status: 200,
-  type: 'get-group-link',
+  type: 'revoke-group-link',
+  linkGroup: 'G3M81fQbuwDB2cuAdPIv0h'
 }
 ```
 Return with erro
@@ -1428,7 +1430,7 @@ Return with erro
 {
   session: 'Marketing',
   status: 404,
-  type: 'get-group-link',
+  type: 'revoke-group-link',
   message: 'message of erro'
 }
 ```
