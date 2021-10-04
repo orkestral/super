@@ -1142,7 +1142,7 @@ Return with erro
 {
   session: 'Marketing',
   status: 404,
-  type: 'get-profile-status',
+  type: 'get-picture',
   message: 'message of erro'
 }
 ```
