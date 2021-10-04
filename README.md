@@ -824,6 +824,7 @@ Return with success
   type: 'get-chats',
   chats: [
     { id: '556181590153', name: 'Joe Dutra', mute: '0', spam: 'false' },
+    {
       id: '5511982743910-1596072761',
       name: 'Venom Support',
       mute: '0',
