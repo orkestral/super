@@ -65,6 +65,8 @@ $ yarn add superchats
   - <a href="#leave-group">Leave Group</a>
   - <a href="#get-group-link">Get Group Link</a>
   - <a href="#revoke-group-link">Revoke Group Link</a>
+  - <a href="#info-group">Info Group</a>
+  - <a href="#set-group-settings">Set Group Settings</a>
   
 
 ## Getting Started
@@ -1510,6 +1512,41 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'info-group',
+  message: 'message of erro'
+}
+```
+## Set Group Settings
+
+> Get info from a specified group
+
+**Arrow sending messages in group only for admins**
+```javascript
+//id of group, 
+let response = await client.setGroupSettings("15815954040-1631239154", "message", true)
+
+```
+**Arrow change settings in group only for admins**
+```javascript
+//id of group, 
+let response = await client.setGroupSettings("15815954040-1631239154", "settings", true)
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'set-group-settings',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'set-group-settings',
   message: 'message of erro'
 }
 ```
