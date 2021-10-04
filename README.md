@@ -45,7 +45,7 @@ $ yarn add superchats
 - <a href="#delete-chat">Delete Chat </a>
 - <a href="#pin-chat">Pin Chat </a>
 - <a href="#block-contact">Block Contact </a>
-- - <a href="#groups-functions">Groups Functions </a>
+- <a href="#groups-functions">Groups Functions </a>
   
 
 ## Getting Started
