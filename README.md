@@ -44,6 +44,8 @@ $ yarn add superchats
 - <a href="#archive-chat">Archive Chat </a>
 - <a href="#delete-chat">Delete Chat </a>
 - <a href="#pin-chat">Pin Chat </a>
+- <a href="#block-contact">Block Contact </a>
+- - <a href="#groups-functions">Groups Functions </a>
   
 
 ## Getting Started
@@ -939,3 +941,43 @@ Return with erro
   message: 'message of erro'
 }
 ```
+## Block Contact
+
+> Blocking or unblocking a specific contact
+
+
+**Block**
+```javascript
+//number of chat, true
+let response = await client.blockContact("5561981590153")
+
+```
+**Unblock**
+```javascript
+//number of chat, false
+let response = await client.unblockContact("5561981590153")
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'block-contact',
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'block-contact',
+  message: 'message of erro'
+}
+```
+
+## Groups Functions
+
+We created the easiest way to create groups with **Superchats**
