@@ -38,6 +38,7 @@ $ yarn add superchats
   - <a href="#send-message-link">Send Link </a>
   - <a href="#send-message-buttons">Send Buttons </a>
   - <a href="#send-message-list">Send List </a>
+- <a href="#get-all-contacts">Get All Contacts </a>
 - <a href="#delete-message">Delete Message </a>
 - <a href="#forwarding-message">Forwarding Message </a>
 - <a href="#mute-chat">Mute Chat </a>
@@ -840,6 +841,47 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'get-chats',
+  message: 'message of erro'
+}
+```
+## Get All Contacts
+
+> List All Contacts
+
+
+```javascript
+let response = await client.getAllContacts()
+
+```
+
+Return with success 
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-all-contacts',
+  qt: 2,
+  contacts: [
+    {
+      id: '552123919428',
+      name: 'Alenii Venom',
+      short: '',
+      isBusiness: true
+    },
+    {
+      id: '556181590153',
+      name: 'Joe Dutra',
+      short: '',
+      isBusiness: false
+    }
+  ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-all-contacts',
   message: 'message of erro'
 }
 ```
