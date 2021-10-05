@@ -1894,7 +1894,7 @@ Return of event onAck
 <br>
 Receive an event every time a contact is: typing, recording, online or offline with you
 <br>
-Types of state: available, composing, recording and paused
+Types of state: **available**, **composing**, **recording** and **paused**
 
 ```javascript
 //event:any
