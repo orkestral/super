@@ -67,6 +67,7 @@ $ yarn add superchats
   - <a href="#revoke-group-link">Revoke Group Link</a>
   - <a href="#info-group">Info Group</a>
   - <a href="#set-group-settings">Set Group Settings</a>
+  - <a href="#get-groups-list">Get Groups List</a>
   
 
 ## Getting Started
@@ -1547,6 +1548,38 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'set-group-settings',
+  message: 'message of erro'
+}
+```
+## Get Groups List
+
+> Get all groups list
+
+```javascript
+//id of group, 
+let response = await client.getGroups()
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'get-groups',
+  chats: [
+    { id: '5511982743910-1596072761', name: 'Venom Support' },
+    { id: '556181590153-1625838636', name: 'Venom Business' }
+  ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-groups',
   message: 'message of erro'
 }
 ```
