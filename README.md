@@ -1928,7 +1928,7 @@ client.onGroup(event => {
 Return of event onGroup
 <br>
 
-**Name change group**
+##### **Name change group**
 
 ```javascript
 {
@@ -1942,7 +1942,7 @@ Return of event onGroup
 }
 ```
 
-**Group changes for messages just for admins**
+##### **Group changes for messages just for admins**
 
 ```javascript
 {
@@ -1955,7 +1955,7 @@ Return of event onGroup
   participants: 3
 }
 ```
-**Group changes for settings just for admins**
+##### **Group changes for settings just for admins**
 ```javascript
 {
   session: 'Marketing',
