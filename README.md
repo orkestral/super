@@ -1810,7 +1810,7 @@ Return with erro
 Receive an event all the time you receive a message from some contact
 ```javascript
 //event:any
-let response = await client.onMessage(event => {
+let response = client.onMessage(event => {
   console.log(event)
 });
 
@@ -1835,7 +1835,7 @@ Return of event onMessage
 Receive an event every time you send a message to some contact with the States of: failed, pending, sent, received or read
 ```javascript
 //event:any
-let response = await client.onAck(event => {
+let response = client.onAck(event => {
   console.log(event)
 });
 
@@ -1862,7 +1862,7 @@ Types of state: available, composing, recording and paused
 
 ```javascript
 //event:any
-let response = await client.onPresence(event => {
+let response = client.onPresence(event => {
   console.log(event)
 });
 
