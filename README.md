@@ -2059,3 +2059,14 @@ Return of event onDelete
   timestamp: 1633453902
 }
 ```
+### **Force Status Always Online**
+<br>
+
+> This event force is always online
+
+
+```javascript
+//event:any
+client.forceStatusOn();
+
+```
