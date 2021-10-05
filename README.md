@@ -72,6 +72,7 @@ $ yarn add superchats
 - <a href="#get-host-device">Get Host Device</a>
 - <a href="#get-messages-of-chat">Get Messages of Chat</a>
 - <a href="#send-messages-for-status">Send Messages for Status</a>
+- <a href="#observation-events">Observation Events</a>
   
 
 ## Getting Started
@@ -1797,5 +1798,79 @@ Return with erro
   status: 404,
   type: 'status-image',
   message: 'message of erro'
+}
+```
+## Observation Events
+
+> Follow each event at the time that happen
+
+
+**Received Message Event**
+Receive an event all the time you receive a message from some contact
+```javascript
+//event:any
+let response = await client.onMessage(event => {
+  console.log(event)
+});
+
+```
+Return of event onMessage
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'text',
+  id: '3EB07A5B9979E8CB453A',
+  from: '556181590153',
+  content: 'oiii',
+  isgroup: false,
+  participant: '',
+  timestamp: 1633414066
+}
+```
+
+**Reading Confirmation Event**
+Receive an event every time you send a message to some contact with the States of: failed, pending, sent, received or read
+```javascript
+//event:any
+let response = await client.onAck(event => {
+  console.log(event)
+});
+
+```
+Return of event onAck
+
+```javascript
+{
+  session: 'Marketing',
+  status: 'RECEIVED',
+  type: 'text',
+  id: '3EB02BC6217B',
+  to: '556181590153',
+  text: 'Hii',
+  isgroup: false,
+  timestamp: 1633414317
+}
+```
+**Presence Event**
+Receive an event every time a contact is: typing, recording, online or offline with you
+<br>
+Types of state: available, composing, recording and paused
+
+```javascript
+//event:any
+let response = await client.onPresence(event => {
+  console.log(event)
+});
+
+```
+Return of event onPresence
+
+```javascript
+{
+  session: 'Marketing',
+  from: '556181590153',
+  status: 'composing',
+  pushname: 'Joe Dutra'
 }
 ```
