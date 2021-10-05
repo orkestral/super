@@ -70,6 +70,8 @@ $ yarn add superchats
   - <a href="#get-groups-list">Get Groups List</a>
 - <a href="#get-battery-level">Get Battery Level</a>
 - <a href="#get-host-device">Get Host Device</a>
+- <a href="#get-messages-of-chat">Get Messages of Chat</a>
+- <a href="#send-messages-for-status">Send Messages for Status</a>
   
 
 ## Getting Started
@@ -1597,6 +1599,203 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'get-host-device',
+  message: 'message of erro'
+}
+```
+## Get Messages of Chat
+
+> Get info of device
+
+**Take the last 10 messages from a chat**
+```javascript
+//number of chat, Number
+let response = await client.getChatMessages('556181590153', 10)
+
+```
+**Take all messages from a chat**
+```javascript
+//number of chat
+let response = await client.getChatAllMessages('556181590153')
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'get-chat-messages',
+  messages: [
+    {
+      session: 'Marketing',
+      type: 'reply',
+      subtype: 'text',
+      id: '3EB082EFA70F',
+      from: '556181590153',
+      text: 'Oi',
+      isgroup: false,
+      reply: [Object],
+      participant: '',
+      timestamp: 1633407729
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '3EB0D91B1ECF',
+      from: '556181590153',
+      content: 'Oi',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633408611
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '3EB0AD7A246F',
+      from: '556181590153',
+      content: 'Testando',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411173
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '46110924F9C202D3933AA4CBC2F209A3',
+      from: '556181590153',
+      content: 'Oi',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411357
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '3EB0EE5900AF',
+      from: '556181590153',
+      content: 'Testando',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411382
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '96033721D4426073C37802F407251F9A',
+      from: '556181590153',
+      content: 'Oi',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411396
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '3EB067D84A06',
+      from: '556181590153',
+      content: 'Testando',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411746
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '2CDF9BAF7E20E72BC74D602A339DA2C2',
+      from: '556181590153',
+      content: 'Oiiii',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411781
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: '4DEBB46473A8E642E8764F6C70567089',
+      from: '556181590153',
+      content: 'Como vai???',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411792
+    },
+    {
+      session: 'Marketing',
+      type: 'text',
+      id: 'B536EAE6275FD6FF98F3E3326FE1682F',
+      from: '556181590153',
+      content: 'Top',
+      isgroup: false,
+      participant: '',
+      timestamp: 1633411811
+    }
+  ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-chat-messages',
+  message: 'message of erro'
+}
+```
+## Send Messages for Status
+
+> Send messages for status of whatsapp
+
+**Send Text for Status**
+```javascript
+//number of chat, Number
+let response = await client.sendTextStatus("Text Status");
+
+```
+**Send Image for Status**
+```javascript
+//number of chat
+let response = await client.sendImageStatus("https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Text optional");
+
+```
+**Send Video for Status**
+```javascript
+//number of chat
+let response = await client.sendVideoStatus("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", "Text optional");
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'status-image',
+  id: '3EB0FF4E2532',
+  to: 'status@broadcast',
+  isgroup: false,
+  file: {
+    url: 'https://mmg.whatsapp.net/d/f/AmkmMjj4ZqieB6bDxS-Trox10ldAe5aIUZ5uQLutyKL8.enc',
+    caption: 'Text optional',
+    mimetype: 'image/jpeg',
+    fileSha256: <Buffer 11 ed 0d 21 f2 59 96 9a 65 cf 7e fa c1 57 a1 ee a2 c9 50 b4 0d 09 df df a8 9f e1 44 dd cf a6 a5>,
+    fileLength: Long { low: 15183, high: 0, unsigned: true },
+    height: 0,
+    width: 0,
+    mediaKey: <Buffer 17 0e ba 4b e6 81 69 eb 2b 30 28 59 5f a1 f4 42 7d fa 18 61 8a de 74 28 09 fc 92 79 7e 3d cc d4>,
+    fileEncSha256: <Buffer fe 62 a7 a4 d9 c3 ca 84 44 51 26 08 4c 7f fe 0a b1 13 f0 ad b9 9a ba 7e de a4 83 35 07 b0 5a 3e>,
+    directPath: '',
+    thumbnail: <Buffer >
+  },
+  participant: '',
+  timestamp: 1633106913
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'status-image',
   message: 'message of erro'
 }
 ```
