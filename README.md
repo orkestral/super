@@ -1581,7 +1581,7 @@ Return with success
   status: 200,
   type: 'get-host-device',
   phone: '556181590153',
-  pushname: 'Joe Dutra',
+  pushName: 'Joe Dutra',
   wa_version: '2.21.19.21',
   mcc: '724',
   mnc: '004',
