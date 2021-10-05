@@ -1751,7 +1751,7 @@ Types of state: a = available, c = composing, r = recording, p = paused
 
 ```javascript
 //chat number, state: a, c, r, p
-let response = client.setPresence('556181590153', 'c');
+let response = await client.setPresence('556181590153', 'c');
 
 ```
 Return with success
