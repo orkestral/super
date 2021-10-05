@@ -1782,19 +1782,16 @@ Return with erro
 ```javascript
 //number of chat, Number
 let response = await client.sendTextStatus("Text Status");
-
 ```
 **Send Image for Status**
 ```javascript
 //number of chat
 let response = await client.sendImageStatus("https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Text optional");
-
 ```
 **Send Video for Status**
 ```javascript
 //number of chat
 let response = await client.sendVideoStatus("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", "Text optional");
-
 ```
 
 Return with success 
@@ -1848,7 +1845,6 @@ Receive an event all the time you receive a message from some contact
 client.onMessage(event => {
   console.log(event)
 });
-
 ```
 Return of event onMessage
 
@@ -1874,7 +1870,6 @@ Receive an event every time you send a message to some contact with the States o
 client.onAck(event => {
   console.log(event)
 });
-
 ```
 Return of event onAck
 
@@ -1913,4 +1908,55 @@ Return of event onPresence
   pushname: 'Joe Dutra'
 }
 ```
+**Group Event**
+<br>
+Receive events all time the name of a group, configurations are changed
+<br>
+Types of return: **change-name**, **change-messages-admin**, **change-settings-admin** and **paused**
 
+```javascript
+//event:any
+client.onGroup(event => {
+  console.log(event)
+});
+
+```
+Return of event onGroup
+<br>
+**Name change group**
+```javascript
+{
+  session: 'Marketing',
+  action: 'change-name',
+  changed: [ 'Grupo Live', 'Teste Grupo Live' ],
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '15795662985',
+  participants: 3
+}
+```
+**Group changes for messages just for admins**
+
+```javascript
+{
+  session: 'Marketing',
+  action: 'change-messages-admin',
+  changed: 'active',
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '15795662985',
+  participants: 3
+}
+```
+**Group changes for settings just for admins**
+```javascript
+{
+  session: 'Marketing',
+  action: 'change-settings-admin',
+  changed: 'active',
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '15795662985',
+  participants: 3
+}
+```
