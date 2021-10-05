@@ -1923,7 +1923,9 @@ client.onGroup(event => {
 ```
 Return of event onGroup
 <br>
+
 **Name change group**
+
 ```javascript
 {
   session: 'Marketing',
@@ -1935,6 +1937,7 @@ Return of event onGroup
   participants: 3
 }
 ```
+
 **Group changes for messages just for admins**
 
 ```javascript
@@ -1957,6 +1960,73 @@ Return of event onGroup
   group: 'Grupo Live',
   from: '15795662985-1631581942',
   participant: '15795662985',
+  participants: 3
+}
+```
+**Participants Event**
+<br>
+
+> Receive events about group participants
+<br>
+
+Types of action: **add*, **remove**, **promote** and **demote**
+
+```javascript
+//event:any
+client.onParticipants(event => {
+  console.log(event)
+});
+
+```
+Return of event onParticipants
+<br>
+
+**Add participants**
+
+```javascript
+{
+  session: 'Marketing',
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '5521991977392',
+  action: 'add',
+  participants: 3
+}
+```
+**Remove participants**
+
+```javascript
+{
+  session: 'Marketing',
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '5521991977392',
+  action: 'remove',
+  participants: 2
+}
+```
+
+**Promote participants**
+
+```javascript
+{
+  session: 'Marketing',
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '5521991977392',
+  action: 'promote',
+  participants: 3
+}
+```
+**Demote participants**
+
+```javascript
+{
+  session: 'Marketing',
+  group: 'Grupo Live',
+  from: '15795662985-1631581942',
+  participant: '5521991977392',
+  action: 'demote',
   participants: 3
 }
 ```
