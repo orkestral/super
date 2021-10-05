@@ -2034,3 +2034,28 @@ Return of event onParticipants
   participants: 3
 }
 ```
+**Delete Event**
+<br>
+
+> Receive events every time a message is deleted
+
+
+```javascript
+//event:any
+client.onDelete(event => {
+  console.log(event)
+});
+
+```
+Return of event onDelete
+<br>
+
+```javascript
+{
+  session: 'Marketing',
+  type: 'message-delete',
+  from: '15795662985-1631581942',
+  id: '3EB07E88FDCF1C4EF887',
+  timestamp: 1633453902
+}
+```
