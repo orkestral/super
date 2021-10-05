@@ -1806,6 +1806,7 @@ Return with erro
 
 
 **Received Message Event**
+<br>
 Receive an event all the time you receive a message from some contact
 ```javascript
 //event:any
@@ -1830,6 +1831,7 @@ Return of event onMessage
 ```
 
 **Reading Confirmation Event**
+<br>
 Receive an event every time you send a message to some contact with the States of: failed, pending, sent, received or read
 ```javascript
 //event:any
@@ -1853,6 +1855,7 @@ Return of event onAck
 }
 ```
 **Presence Event**
+<br>
 Receive an event every time a contact is: typing, recording, online or offline with you
 <br>
 Types of state: available, composing, recording and paused
