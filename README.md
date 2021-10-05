@@ -1985,7 +1985,7 @@ client.onParticipants(event => {
 Return of event onParticipants
 <br>
 
-**Add participants**
+##### **Add participants**
 
 ```javascript
 {
@@ -1997,7 +1997,7 @@ Return of event onParticipants
   participants: 3
 }
 ```
-**Remove participants**
+##### **Remove participants**
 
 ```javascript
 {
@@ -2010,7 +2010,7 @@ Return of event onParticipants
 }
 ```
 
-**Promote participants**
+##### **Promote participants**
 
 ```javascript
 {
@@ -2022,7 +2022,7 @@ Return of event onParticipants
   participants: 3
 }
 ```
-**Demote participants**
+##### **Demote participants**
 
 ```javascript
 {
