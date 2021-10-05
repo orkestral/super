@@ -1973,7 +1973,7 @@ Return of event onGroup
 > Receive events about group participants
 <br>
 
-Types of action: **add*, **remove**, **promote** and **demote**
+Types of action: **add**, **remove**, **promote** and **demote**
 
 ```javascript
 //event:any
