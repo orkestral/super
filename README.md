@@ -69,6 +69,7 @@ $ yarn add superchats
   - <a href="#set-group-settings">Set Group Settings</a>
   - <a href="#get-groups-list">Get Groups List</a>
 - <a href="#get-battery-level">Get Battery Level</a>
+- <a href="#get-host-device">Get Host Device</a>
   
 
 ## Getting Started
@@ -1597,6 +1598,7 @@ Return with success
 ```javascript
 { 
   session: 'Marketing',
+  status: 200,
   type: 'get-battery-level',
   level: 56 
 }
@@ -1606,7 +1608,43 @@ Return with erro
 {
   session: 'Marketing',
   status: 404,
-  type: 'get-groups',
+  type: 'get-battery-level',
+  message: 'message of erro'
+}
+```
+## Get Host Device
+
+> Get info of device
+
+```javascript
+let response = await client.getHostDevice()
+
+```
+
+Return with success 
+
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'get-host-device',
+  phone: '556181590153',
+  pushname: 'Joe Dutra',
+  wa_version: '2.21.19.21',
+  mcc: '724',
+  mnc: '004',
+  os_version: '11',
+  device_manufacturer: 'IPHONE 13 PRO',
+  device_model: 'OSX 14',
+  os_build_number: 'RKQ1.200826.002 test-keys'
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-host-device',
   message: 'message of erro'
 }
 ```
