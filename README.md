@@ -357,55 +357,7 @@ let response = await client.sendVideo("5561981590153", "http://commondatastorage
   message: 'message of erro'
 }
 ```
-### Send Message Audio
-> For audio submission, you can use URL or the local file path
 
-```javascript
-let response = await client.sendAudio("5561981590153", "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3");
-
-```
-
-> To reply to a message with audio, use the id of the message you want to reply to in the last parameter, which is optional.
-
-```javascript
-let response = await client.sendAudio("5561981590153", "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3", '3EB01A690E67');
-```
-
-##### Return with success
-```javascript
-{
-  session: 'Marketing',
-  status: 200,
-  type: 'audio',
-  id: '3EB072B039F6',
-  to: '556181590153',
-  content: '',
-  isgroup: false,
-  file: {
-    url: 'https://mmg.whatsapp.net/d/f/AjwRfBCBZ1XgeSLtdVTr96lMJO5CtZtjCi0HpNjEctDW.enc',
-    mimetype: 'audio/ogg; codecs=opus',
-    fileSha256: <Buffer fa 28 20 25 6f 2c d3 f2 df 03 fa 24 7d 7b 01 e7 9d 3f e7 94 34 4a ad ce a0 8c ee 06 bc ce 3c 94>,
-    fileLength: Long { low: 764176, high: 0, unsigned: true },
-    seconds: 27,
-    mediaKey: <Buffer ad f9 19 91 76 08 28 59 63 b2 be 43 13 8d 68 5b d3 90 e7 93 6d 32 29 5e e8 b5 b9 cb 37 76 d6 27>,
-    fileEncSha256: <Buffer ab d4 0e 48 ca 4c 1e 47 86 02 50 3f 0d 87 aa 7f a7 82 ac ff eb 8d 1f ac f1 f8 6d da 36 1e ba e4>,
-    directPath: ''
-  },
-  participant: '',
-  timestamp: 1633111077
-}
-
-```
-##### Return with erro
-
-```javascript
-{
-  session: 'Marketing',
-  status: 404,
-  type: 'audio',
-  message: 'message of erro'
-}
-```
 ### Send Message Audio
 > For audio submission, you can use URL or the local file path
 
