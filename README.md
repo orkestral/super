@@ -68,6 +68,7 @@ $ yarn add superchats
   - <a href="#info-group">Info Group</a>
   - <a href="#set-group-settings">Set Group Settings</a>
   - <a href="#get-groups-list">Get Groups List</a>
+- <a href="#get-battery-level">Get Battery Level</a>
   
 
 ## Getting Started
@@ -1571,6 +1572,33 @@ Return with success
     { id: '5511982743910-1596072761', name: 'Venom Support' },
     { id: '556181590153-1625838636', name: 'Venom Business' }
   ]
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'get-groups',
+  message: 'message of erro'
+}
+```
+## Get Battery Level
+
+> Get porcent of battery
+
+```javascript
+let response = await client.getBatteryLevel()
+
+```
+
+Return with success 
+
+```javascript
+{ 
+  session: 'Marketing',
+  type: 'get-battery-level',
+  level: 56 
 }
 ```
 Return with erro
