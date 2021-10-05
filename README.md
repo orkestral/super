@@ -71,6 +71,7 @@ $ yarn add superchats
 - <a href="#get-battery-level">Get Battery Level</a>
 - <a href="#get-host-device">Get Host Device</a>
 - <a href="#get-messages-of-chat">Get Messages of Chat</a>
+- <a href="#update-presence">Update Presence</a>
 - <a href="#send-messages-for-status">Send Messages for Status</a>
 - <a href="#observation-events">Observation Events</a>
   
@@ -1741,6 +1742,38 @@ Return with erro
   message: 'message of erro'
 }
 ```
+
+## Update Presence
+
+Update your presence for a certain contact
+
+Types of state: a = available, c = composing, r = recording, p = paused
+
+```javascript
+//chat number, state: a, c, r, p
+let response = client.setPresence('556181590153', 'c');
+
+```
+Return with success
+
+```javascript
+{ 
+  session: 'Marketing',
+  status: 200, 
+  type: 'set-presence' 
+}
+```
+
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'set-presence',
+  message: 'message of erro'
+}
+```
+
 ## Send Messages for Status
 
 > Send messages for status of whatsapp
@@ -1877,3 +1910,4 @@ Return of event onPresence
   pushname: 'Joe Dutra'
 }
 ```
+
