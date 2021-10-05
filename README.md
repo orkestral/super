@@ -1556,7 +1556,6 @@ Return with erro
 > Get all groups list
 
 ```javascript
-//id of group, 
 let response = await client.getGroups()
 
 ```
