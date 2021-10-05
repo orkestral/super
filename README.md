@@ -1836,7 +1836,7 @@ Return with erro
 > Follow each event at the time that happen
 
 
-**Received Message Event**
+### **Received Message Event**
 <br>
 
 > Receive an event all the time you receive a message from some contact
@@ -1862,7 +1862,7 @@ Return of event onMessage
 }
 ```
 
-**Reading Confirmation Event**
+### **Reading Confirmation Event**
 <br>
 
 > Receive an event every time you send a message to some contact with the States of: failed, pending, sent, received or read
@@ -1887,7 +1887,7 @@ Return of event onAck
   timestamp: 1633414317
 }
 ```
-**Presence Event**
+### **Presence Event**
 <br>
 
 > Receive an event every time a contact is: typing, recording, online or offline with you
@@ -1911,7 +1911,7 @@ Return of event onPresence
   pushname: 'Joe Dutra'
 }
 ```
-**Group Event**
+### **Group Event**
 <br>
 
 > Receive events all time the name of a group, configurations are changed
@@ -1967,7 +1967,7 @@ Return of event onGroup
   participants: 3
 }
 ```
-**Participants Event**
+### **Participants Event**
 <br>
 
 > Receive events about group participants
@@ -2034,7 +2034,7 @@ Return of event onParticipants
   participants: 3
 }
 ```
-**Delete Event**
+### **Delete Event**
 <br>
 
 > Receive events every time a message is deleted
