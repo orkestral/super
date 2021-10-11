@@ -41,11 +41,9 @@ $ yarn add superchats
 - <a href="#get-all-contacts">Get All Contacts </a>
 - <a href="#delete-message">Delete Message </a>
 - <a href="#forwarding-message">Forwarding Message </a>
-- <a href="#get-chat-messages">Get Chat Messages </a>
-- <a href="#get-chat-all-messages">Get Chat All Messages </a>
-- <a href="#get-message-by-id">Get Message By Id</a>
 - <a href="#mute-chat">Mute Chat </a>
 - <a href="#get-chats">Get Chats </a>
+- <a href="#read-chat-messages">Read Chat Messages</a>
 - <a href="#get-block-list">Get Block List </a>
 - <a href="#archive-chat">Archive Chat </a>
 - <a href="#delete-chat">Delete Chat </a>
@@ -70,7 +68,7 @@ $ yarn add superchats
   - <a href="#get-groups-list">Get Groups List</a>
 - <a href="#get-battery-level">Get Battery Level</a>
 - <a href="#get-host-device">Get Host Device</a>
-- <a href="#get-messages-of-chat">Get Messages of Chat</a>
+- <a href="#chat-messages-functions">Chat Messages Functions</a>
 - <a href="#update-presence">Update Presence</a>
 - <a href="#send-messages-for-status">Send Messages for Status</a>
 - <a href="#observation-events">Observation Events</a>
@@ -121,9 +119,10 @@ new superchats.create(
     connectTest: 10_000, // Number of milliseconds to check internet connection
     logQr: true // Logs QR automatically in terminal
   },
-  (base64QR, asciiQR) => {
-    console.log("base64 string qrcode: ", base64QR);
+  (base64QR, asciiQR, urlCode) => {
+    console.log("base64 image of qrcode: ", base64QR);
     console.log("Terminal image of qrcode in caracter ascii: ", asciiQR);
+    console.log("Terminal string hash of qrcode: ", urlCode);
   },
   (statusSession) => {
     console.log("Status Session: ", statusSession);
@@ -167,6 +166,28 @@ client.onMessage( async (message) => {
    
   }
 });
+```
+
+##### Return of decryptFile
+```javascript
+{
+    session: 'Marketing',
+    status: 200,
+    type: "decrypt-by-id-file",
+    buffer: {
+      type: "Buffer",
+      data: [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68]
+    }
+}
+```
+##### Return of decryptFileSave
+```javascript
+{
+    session: 'Marketing',
+    status: 404,
+    type: "decrypt-by-id-file-save",
+    response: "./files/teste4.mp4"
+}
 ```
 
 ## Message Sending Functions
@@ -818,6 +839,33 @@ Return with erro
   session: 'Marketing',
   status: 404,
   type: 'get-chats',
+  message: 'message of erro'
+}
+```
+## Read Chat Messages
+
+> Read all messages from a chat
+
+
+```javascript
+let response = await client.markRead('5561981590153')
+
+```
+
+Return with success 
+```javascript
+{
+    session: 'Marketing',
+    status: 200,
+    type: "mark-read"
+}
+```
+Return with erro
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'mark-read',
   message: 'message of erro'
 }
 ```
@@ -1604,9 +1652,9 @@ Return with erro
   message: 'message of erro'
 }
 ```
-## Get Messages of Chat
+## Chat Messages Functions
 
-> Get info of device
+> Know the types of functions to recover chat messages
 
 **Take the last 10 messages from a chat**
 ```javascript
@@ -1620,7 +1668,12 @@ let response = await client.getChatMessages('556181590153', 10)
 let response = await client.getChatAllMessages('556181590153')
 
 ```
+**Take all unread messages all chat**
+```javascript
+//number of chat
+let response = await client.getAllUnreadMessages()
 
+```
 Return with success 
 
 ```javascript
