@@ -25,6 +25,7 @@ $ yarn add superchats
 - <a href="#multiples-sessions">Multiples Sessions</a>
 - <a href="#optional-parameters">Optional Parameters</a>
 - <a href="#download-and-save-files">Download and Save Files </a>
+- <a href="#disconnect-functions">Disconnect Functions </a>
 - <a href="#message-sending-functions">Message Sending Functions </a>
   - <a href="#send-message-text">Send Text </a>
   - <a href="#send-message-image">Send Image </a>
@@ -188,6 +189,16 @@ client.onMessage( async (message) => {
     type: "decrypt-by-id-file-save",
     response: "./files/teste4.mp4"
 }
+```
+## Disconnect Functions
+
+> Disconnect Functions
+
+```javascript
+   client.close()
+```
+```javascript
+   client.logout()
 ```
 
 ## Message Sending Functions
@@ -1528,13 +1539,13 @@ Return with erro
 
 **Set sending messages in group only for admins**
 ```javascript
-//id of group, 
+//id of group, type, boolean
 let response = await client.setGroupSettings("15815954040-1631239154", "message", true)
 
 ```
 **Set change settings in group only for admins**
 ```javascript
-//id of group, 
+//id of group, type, boolean
 let response = await client.setGroupSettings("15815954040-1631239154", "settings", true)
 
 ```
@@ -1668,9 +1679,8 @@ let response = await client.getChatMessages('556181590153', 10)
 let response = await client.getChatAllMessages('556181590153')
 
 ```
-**Take all unread messages all chat**
+**Take all unread messages from all chats**
 ```javascript
-//number of chat
 let response = await client.getAllUnreadMessages()
 
 ```
