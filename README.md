@@ -5,6 +5,13 @@ With Superchats you can build service bots, multiservice chats or any system tha
 
 <b>Superchats</b> is a premium version of <a target="_blank" href='https://github.com/orkestral/venom'>Venom</a>, with exclusive features and support for companies and developers worldwide
 
+## Buy a license
+
+The value of the license is $30 monthly dollars, to acquire contact in whatsapp by clicking on the image below !!
+
+<a target="_blank" href="https://web.whatsapp.com/send?phone=556181590153&text=I%20want%20to%20buy%201%20license" target="_blank"><img title="whatzapp" height="100" width="375" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WhatsApp_logo.svg/2000px-WhatsApp_logo.svg.png"></a>
+
+
 ## Quickstart
 
 Run the following command to ensure you have SuperChats installed:
@@ -73,7 +80,6 @@ $ yarn add superchats
 - <a href="#update-presence">Update Presence</a>
 - <a href="#send-messages-for-status">Send Messages for Status</a>
 - <a href="#observation-events">Observation Events</a>
-  
 
 ## Getting Started
 
