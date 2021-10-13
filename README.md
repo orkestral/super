@@ -1,7 +1,7 @@
 # <a href='https://superchats.io'><img src='./img/superchats.png' height='60' alt='SuperChats' aria-label='superchats.io' /></a>
 
-<b>SuperChats</b> is a premium library with unique features that control Whatsapp functions.
-With Superchats you can build service bots, multiservice chats or any system that uses whatsapp
+<b>SuperChats</b> is a premium library with unique features that control Whatsapp functions with socket.
+With Superchats you can build service bots, multiservice chats or any system that uses Whatsapp
 
 <b>Superchats</b> is a premium version of <a target="_blank" href='https://github.com/orkestral/venom'>Venom</a>, with exclusive features and support for companies and developers worldwide
 
@@ -17,13 +17,13 @@ The value of the license is $30 monthly dollars, to acquire contact in whatsapp 
 Run the following command to ensure you have SuperChats installed:
 
 ```bash
-$ npm install superchats
+$ npm install super-chats
 ```
 
 or using yarn:
 
 ```bash
-$ yarn add superchats
+$ yarn add super-chats
 ```
 
 ## Documentations
@@ -115,7 +115,7 @@ new superchats.create('support').then((supportClient) => {...});
 Optional parameters are started along with the connection as events of **QRCODE and CONNECTION STATUS**, plus extra options
 
 ```javascript
-const superchats = require("superchats");
+const superchats = require("super-chats");
 
 new superchats.create(
   "Marketing",
