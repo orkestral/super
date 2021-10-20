@@ -17,13 +17,13 @@ The value of the license is $30 monthly dollars, to acquire contact in whatsapp 
 Run the following command to ensure you have SuperChats installed:
 
 ```bash
-$ npm install super-chats
+$ npm install superchats
 ```
 
 or using yarn:
 
 ```bash
-$ yarn add super-chats
+$ yarn add superchats
 ```
 
 ## Documentations
