@@ -1,5 +1,5 @@
 # <a href='https://github.com/orkestral/superchats/'><img src='./img/superchats.png' height='60' alt='SuperChats' aria-label='https://github.com/orkestral/superchats/' /></a>
-
+ <a href='https://github.com/orkestral/superchats/'>Acesse o Git do SuperChats</a> <br>
 <b>SuperChats</b> is a premium library with unique features that control Whatsapp functions with socket.
 With Superchats you can build service bots, multiservice chats or any system that uses Whatsapp
 
