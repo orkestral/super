@@ -86,8 +86,9 @@ $ yarn add superchats
 
 ```javascript
 const superchats = require("superchats");
-new superchats.create("Marketing", {
+superchats.create("Marketing", {
   license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true // (default is false) for used whatsapp beta
 }).then(async (client) => {
   await client.onMessage(async (message) => {
     if (message.type == "text" && message.content == "hi") {
@@ -105,10 +106,10 @@ Multiples sessions can be created at the same time by pasing a session name to c
 
 ```javascript
 // Init sales whatsapp bot
-new superchats.create('sales').then((salesClient) => {...});
+superchats.create('sales').then((salesClient) => {...});
 
 // Init support whatsapp bot
-new superchats.create('support').then((supportClient) => {...});
+superchats.create('support').then((supportClient) => {...});
 ```
 
 ## Optional Parameters
@@ -118,10 +119,11 @@ Optional parameters are started along with the connection as events of **QRCODE 
 ```javascript
 const superchats = require("super-chats");
 
-new superchats.create(
+superchats.create(
   "Marketing",
   {
     license: "asjdh-efddff734-sdsdf834-233272", // Valid license to use Superchats
+    multidevice: true // (default is false) for used whatsapp beta
     welcomeScreen: true, // Show or hide welcome in terminal
     retries: 3, // Number of connection attempts
     connectTest: 10_000, // Number of milliseconds to check internet connection
