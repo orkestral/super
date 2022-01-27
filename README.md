@@ -88,7 +88,7 @@ $ yarn add superchats
 const superchats = require("superchats");
 superchats.create("Marketing", {
   license: "asjdh-efddff734-sdsdf834-233272",
-  multidevice: true // (default is false) for used whatsapp beta
+  multidevice: true, // (default is false) for used whatsapp beta
 }).then(async (client) => {
   await client.onMessage(async (message) => {
     if (message.type == "text" && message.content == "hi") {
@@ -123,7 +123,7 @@ superchats.create(
   "Marketing",
   {
     license: "asjdh-efddff734-sdsdf834-233272", // Valid license to use Superchats
-    multidevice: true // (default is false) for used whatsapp beta
+    multidevice: true, // (default is false) for used whatsapp beta
     welcomeScreen: true, // Show or hide welcome in terminal
     retries: 3, // Number of connection attempts
     connectTest: 10_000, // Number of milliseconds to check internet connection
