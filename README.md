@@ -681,6 +681,25 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
 ```javascript
   let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional', '3EB01A690E67');
 ```
+
+#### For Whatsapp Beta
+
+
+```javascript
+const buttons = [
+    {index: 1, quickReplyButton: {displayText: 'Button Normal Reply', id: 'id-123'}},
+    {index: 2, callButton: {displayText: 'Button Call', phoneNumber: '+55 (61) 98159-0153'}},
+    {index: 3, urlButton: {displayText: 'Button Link', url: 'https://stuidomedia.io'}},
+]
+
+let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional');
+```
+
+> To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
+
+```javascript
+  let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional', '3EB01A690E67');
+```
 ##### Return with success
 ```javascript
 {
@@ -711,25 +730,7 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
 }
 ```
 
-#### For Whatsapp Beta
 
-
-```javascript
-const buttons = [
-    {index: 1, quickReplyButton: {displayText: 'Button Normal Reply', id: 'id-123'}},
-    {index: 2, callButton: {displayText: 'Button Call', phoneNumber: '+55 (61) 98159-0153'}},
-    {index: 3, urlButton: {displayText: 'Button Link', url: 'https://stuidomedia.io'}},
-]
-```
-
-let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional');
-
-```
-> To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
-
-```javascript
-  let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional', '3EB01A690E67');
-```
 
 ### Send Message List
 > Attention! This function does not work if connected to a WhatsApp Business account
