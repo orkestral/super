@@ -75,7 +75,6 @@ $ yarn add superchats
   - <a href="#info-group">Info Group</a>
   - <a href="#set-group-settings">Set Group Settings</a>
   - <a href="#get-groups-list">Get Groups List</a>
-- <a href="#get-battery-level">Get Battery Level</a>
 - <a href="#get-host-device">Get Host Device</a>
 - <a href="#chat-messages-functions">Chat Messages Functions</a>
 - <a href="#update-presence">Update Presence</a>
@@ -118,7 +117,7 @@ ssuperchats.create({session:'support', license: "asjdh-efddff734-sdsdf834-233272
 Optional parameters are started along with the connection as events of **QRCODE and CONNECTION STATUS**, plus extra options
 
 ```javascript
-const superchats = require("super-chats");
+const superchats = require("superchats");
 
 superchats.create({
     session: "Marketing",
