@@ -132,7 +132,25 @@ superchats.create({
     console.log("Terminal string hash of qrcode: ", urlCode);
     statusFind: (statusSession) => {
     console.log("Status Session: ", statusSession);
-  }
+  },
+  onMessage: (event) => { // Receive an event all the time you receive a message from some contact
+     console.log(event)
+     },
+  onAck: (event) => {    // Receive an event every time you send a message to some contact with the States of: failed, pending, sent, received or read
+     console.log(event)
+     },
+  onPresence: (event) => { // Receive an event every time a contact is: typing, recording, online or offline with you
+     console.log(event)
+     },
+  onGroups: (event) => { // Receive events all time the name of a group, configurations are changed
+     console.log(event)
+     },
+  onParticipants: (event) => { // Receive events about group participants
+     console.log(event)
+     },
+  onDelete: (event) => { // Receive events every time a message is deleted
+     console.log(event)
+     }
   })
 ```
 ## Callback StatusFind
@@ -890,9 +908,18 @@ Return with erro
 
 
 ```javascript
-let response = await client.markRead('5561981590153')
+let response = await client.markReadAll('5561981590153')
 
 ```
+
+> Read message from a chat
+
+
+```javascript
+let response = await client.markRead('5561981590153', '3EB01A690E67') // params: Number, MessageID
+
+```
+
 
 Return with success 
 ```javascript
@@ -931,14 +958,12 @@ Return with success
     {
       id: '552123919428',
       name: 'Alenii Venom',
-      short: '',
-      isBusiness: true
+      short: ''
     },
     {
       id: '556181590153',
       name: 'Joe Dutra',
-      short: '',
-      isBusiness: false
+      short: ''
     }
   ]
 }
