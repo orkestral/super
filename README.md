@@ -86,16 +86,17 @@ $ yarn add superchats
 
 ```javascript
 const superchats = require("superchats");
-superchats.create("Marketing", {
+
+const client = await superchats.create({
+  session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
   multidevice: true, // (default is false) for used whatsapp beta
-}).then(async (client) => {
-  await client.onMessage(async (message) => {
-    if (message.type == "text" && message.content == "hi") {
-      await client.sendText("5561981590153", "Thanks for using Superchats!!!");
-    }
-  });
-});
+  onMessage: async (message) => {
+     if (message.type == "text" && message.content == "hi") {
+       await client.sendText(message.from, "Thanks for using Superchats!!!");
+     }
+   }  // Receive an event all the time you receive a message from some contact
+})
 ```
 
 ## Multiples Sessions
@@ -106,10 +107,10 @@ Multiples sessions can be created at the same time by pasing a session name to c
 
 ```javascript
 // Init sales whatsapp bot
-superchats.create('sales').then((salesClient) => {...});
+superchats.create({session:'sales', license: "asjdh-efddff734-sdsdf834-233272"}).then((salesClient) => {...});
 
 // Init support whatsapp bot
-superchats.create('support').then((supportClient) => {...});
+ssuperchats.create({session:'support', license: "asjdh-efddff734-sdsdf834-233272"}).then((supportClient) => {...});
 ```
 
 ## Optional Parameters
@@ -119,33 +120,23 @@ Optional parameters are started along with the connection as events of **QRCODE 
 ```javascript
 const superchats = require("super-chats");
 
-superchats.create(
-  "Marketing",
-  {
+superchats.create({
+    session: "Marketing",
     license: "asjdh-efddff734-sdsdf834-233272", // Valid license to use Superchats
     multidevice: true, // (default is false) for used whatsapp beta
     welcomeScreen: true, // Show or hide welcome in terminal
     retries: 3, // Number of connection attempts
-    connectTest: 10_000, // Number of milliseconds to check internet connection
-    logQr: true // Logs QR automatically in terminal
-  },
-  (base64QR, asciiQR, urlCode) => {
+    logQr: true // (Default is true) Logs QR automatically in terminal
+    qrcode: (base64QR, asciiQR, urlCode) => {
     console.log("base64 image of qrcode: ", base64QR);
     console.log("Terminal image of qrcode in caracter ascii: ", asciiQR);
     console.log("Terminal string hash of qrcode: ", urlCode);
-  },
-  (statusSession) => {
+    statusFind: (statusSession) => {
     console.log("Status Session: ", statusSession);
   }
-).then(async (client) => {
-  await client.onMessage(async (message) => {
-    if (message.type == "text" && message.content == "hi") {
-      await client.sendText("5561981590153", "Thanks for using Superchats!!!");
-    }
-  });
-});
+  })
 ```
-## Callback Status Session
+## Callback StatusFind
 
 Get connection feedback by following codes:
 
@@ -156,8 +147,8 @@ Get connection feedback by following codes:
 | `isDisconnected`    | The client has disconnected or has been disconnected                                                                                                                           |
 | `isLogout`           | The client has disconnected and removed the token from the device                                                                                                                              |
 | `isConnected`        | The client has successfully connected list                                                                                                                       |
-| `noSync`        | The client lost synchronization with device                                                                                                                       |
-| `isSynced`        | The client has sync again                                                                                                               |
+| `serverDisconnected`        | Disconnected for whatsapp socket server                                                                                                                  |
+
 
 
 ## Download and Save Files
@@ -165,9 +156,13 @@ Get connection feedback by following codes:
 Download and save any message file with the functions below
 
 ```javascript
-client.onMessage( async (message) => {
-  if (message.isMedia === true) {
-
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onMessage: async (message) => {
+      if (message.isMedia === true) {
+      
     //retrieve the file buffer for a given message
     const buffer = await client.decryptFile(message);
 
@@ -175,7 +170,9 @@ client.onMessage( async (message) => {
     const saveFile = await client.decryptFileSave(message, 'filename')
    
   }
-});
+   }  // Receive an event all the time you receive a message from some contact
+})
+
 ```
 
 ##### Return of decryptFile
