@@ -8,7 +8,7 @@ With Superchats you can build service bots, multiservice chats or any system tha
 
 ## Buy a license
 
-The value of the license is $30 monthly dollars, to acquire contact in whatsapp by clicking on the image below !!
+The value of the license is $50 monthly dollars, to acquire contact in whatsapp by clicking on the image below !!
 
 <a target="_blank" href="https://web.whatsapp.com/send?phone=556181590153&text=I%20want%20to%20buy%201%20license" target="_blank"><img title="whatzapp" height="100" width="375" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WhatsApp_logo.svg/2000px-WhatsApp_logo.svg.png"></a>
 
@@ -1631,34 +1631,7 @@ Return with erro
   message: 'message of erro'
 }
 ```
-## Get Battery Level
 
-> Get porcent of battery
-
-```javascript
-let response = await client.getBatteryLevel()
-
-```
-
-Return with success 
-
-```javascript
-{ 
-  session: 'Marketing',
-  status: 200,
-  type: 'get-battery-level',
-  level: 56 
-}
-```
-Return with erro
-```javascript
-{
-  session: 'Marketing',
-  status: 404,
-  type: 'get-battery-level',
-  message: 'message of erro'
-}
-```
 ## Get Host Device
 
 > Get info of device
@@ -1676,14 +1649,8 @@ Return with success
   status: 200,
   type: 'get-host-device',
   phone: '556181590153',
-  pushName: 'Joe Dutra',
-  wa_version: '2.21.19.21',
-  mcc: '724',
-  mnc: '004',
-  os_version: '11',
-  device_manufacturer: 'IPHONE 13 PRO',
-  device_model: 'OSX 14',
-  os_build_number: 'RKQ1.200826.002 test-keys'
+  image: "https://pps.whatsapp.net/v/t61.24694-24/254827313_500572874791871_6168181924916411415_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=5ee43eb4f1fe109b10ceba05292561aa&oe=622FF53D",
+  pushName: 'Joe Dutra'
 }
 ```
 Return with erro
@@ -1869,63 +1836,6 @@ Return with erro
 }
 ```
 
-## Send Messages for Status
-
-> Send messages for status of whatsapp
-
-**Send Text for Status**
-```javascript
-//number of chat, Number
-let response = await client.sendTextStatus("Text Status");
-```
-**Send Image for Status**
-```javascript
-//number of chat
-let response = await client.sendImageStatus("https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Text optional");
-```
-**Send Video for Status**
-```javascript
-//number of chat
-let response = await client.sendVideoStatus("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", "Text optional");
-```
-
-Return with success 
-
-```javascript
-{
-  session: 'Marketing',
-  status: 200,
-  type: 'status-image',
-  id: '3EB0FF4E2532',
-  to: 'status@broadcast',
-  isgroup: false,
-  file: {
-    url: 'https://mmg.whatsapp.net/d/f/AmkmMjj4ZqieB6bDxS-Trox10ldAe5aIUZ5uQLutyKL8.enc',
-    caption: 'Text optional',
-    mimetype: 'image/jpeg',
-    fileSha256: <Buffer 11 ed 0d 21 f2 59 96 9a 65 cf 7e fa c1 57 a1 ee a2 c9 50 b4 0d 09 df df a8 9f e1 44 dd cf a6 a5>,
-    fileLength: Long { low: 15183, high: 0, unsigned: true },
-    height: 0,
-    width: 0,
-    mediaKey: <Buffer 17 0e ba 4b e6 81 69 eb 2b 30 28 59 5f a1 f4 42 7d fa 18 61 8a de 74 28 09 fc 92 79 7e 3d cc d4>,
-    fileEncSha256: <Buffer fe 62 a7 a4 d9 c3 ca 84 44 51 26 08 4c 7f fe 0a b1 13 f0 ad b9 9a ba 7e de a4 83 35 07 b0 5a 3e>,
-    directPath: '',
-    thumbnail: <Buffer >
-  },
-  participant: '',
-  timestamp: 1633106913
-}
-```
-Return with erro
-
-```javascript
-{
-  session: 'Marketing',
-  status: 404,
-  type: 'status-image',
-  message: 'message of erro'
-}
-```
 ## Observation Events
 
 > Follow each event at the time that happen
@@ -1938,9 +1848,13 @@ Return with erro
 
 ```javascript
 //event:any
-client.onMessage(event => {
-  console.log(event)
-});
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onMessage: (event) => {
+     console.log(event)
+})
 ```
 Return of event onMessage
 
@@ -1964,9 +1878,13 @@ Return of event onMessage
 
 ```javascript
 //event:any
-client.onAck(event => {
-  console.log(event)
-});
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onAck: (event) => {
+     console.log(event)
+})
 ```
 Return of event onAck
 
@@ -1991,9 +1909,13 @@ Types of state: **available**, **composing**, **recording** and **paused**
 
 ```javascript
 //event:any
-client.onPresence(event => {
-  console.log(event)
-});
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onPresence: (event) => {
+     console.log(event)
+})
 
 ```
 Return of event onPresence
@@ -2015,10 +1937,13 @@ Types of return: **change-name**, **change-messages-admin**, **change-settings-a
 
 ```javascript
 //event:any
-client.onGroup(event => {
-  console.log(event)
-});
-
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onGroups: (event) => {
+     console.log(event)
+})
 ```
 Return of event onGroup
 <br>
@@ -2072,9 +1997,13 @@ Types of action: **add**, **remove**, **promote** and **demote**
 
 ```javascript
 //event:any
-client.onParticipants(event => {
-  console.log(event)
-});
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onParticipants: (event) => {
+     console.log(event)
+})
 
 ```
 Return of event onParticipants
@@ -2137,9 +2066,13 @@ Return of event onParticipants
 
 ```javascript
 //event:any
-client.onDelete(event => {
-  console.log(event)
-});
+const client = await superchats.create({
+  session: "Marketing",
+  license: "asjdh-efddff734-sdsdf834-233272",
+  multidevice: true, // (default is false) for used whatsapp beta
+  onDelete: (event) => {
+     console.log(event)
+})
 
 ```
 Return of event onDelete
@@ -2154,14 +2087,4 @@ Return of event onDelete
   timestamp: 1633453902
 }
 ```
-### **Force Status Always Online**
-<br>
 
-> This event force is always online
-
-
-```javascript
-//event:any
-client.forceStatusOn();
-
-```
