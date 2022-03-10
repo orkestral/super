@@ -164,10 +164,11 @@ const client = await superchats.create({
       if (message.isMedia === true) {
       
     //retrieve the file buffer for a given message
-    const buffer = await client.decryptFile(message);
+    const buffer = await client.decryptByIdFile(message.from, message.id);
 
     // Save the message file in the project's root or in a directory: './diretory/filename' don't forget to create the directory
-    const saveFile = await client.decryptFileSave(message, 'filename')
+    
+    const saveFile = await client.decryptByIdFileSave(message.from, message.id, filename);
    
   }
    }  // Receive an event all the time you receive a message from some contact
