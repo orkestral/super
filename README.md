@@ -752,19 +752,50 @@ let response = await client.sendButtonsMD("5561981590153", "title of message", b
 
 ```javascript
 
-  const options = [
- {title: 'Title of Option', description: "description", rowId:"id1"},
- {title: 'Title of Option', description: "description", rowId:"id2"}
-]
-  //number of contact, name of button, name of section, options <array>, description: optional
-  let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional');
+   const sections = [
+        {
+          title: "Bovina",
+          rows: [
+            { title: "Fraudinha", rowId: "carnes1" },
+            { title: "Alcatra", rowId: "carnes2", description: "Carne boa" },
+          ],
+        },
+        {
+          title: "Suina",
+          rows: [
+            { title: "Costelinha", rowId: "carnes3" },
+            {
+              title: "Picanha Suina",
+              rowId: "carnes4",
+              description: "Carne boa",
+            },
+          ],
+        },
+      ];
+  //number of contact, name of button, sections array, title, description: optional, footer: optional
+  let response = await const response = await client.sendList(
+        "5561981590153",
+        "Escolha a Carne",
+        sections,
+        "Escolha 1 tipo de carne",
+        "", //Description opcional
+        "Qual o tipo de carne vai na sua refeição?"
+      );
 
 ```
 > To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
-  //number of contact, name of button, name of section, options <array>, description: optional, id message for reply
-  let response = await client.sendList("5561981590153", "Name of Button", "Name of section", options, 'Description optional', '3EB01A690E67');
+  //number of contact, name of button, sections array, title, description: optional, footer: optional,  id message for reply
+  let response = await const response = await client.sendList(
+        "5561981590153",
+        "Escolha a Carne",
+        sections,
+        "Escolha 1 tipo de carne",
+        "", //Description opcional
+        "Qual o tipo de carne vai na sua refeição?",
+        "3EB01A690E67"
+      );
 ```
 ##### Return with success
 ```javascript
