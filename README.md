@@ -122,9 +122,9 @@ const superchats = require("superchats");
 superchats.create({
     session: "Marketing",
     license: "asjdh-efddff734-sdsdf834-233272", // Valid license to use Superchats
-    multidevice: true, // (default is false) for used whatsapp beta
     welcomeScreen: true, // Show or hide welcome in terminal
-    retries: 3, // Number of connection attempts
+    retries: 3, // Number of connection attempts,
+    nodata true, // It doesn't get the entire history of the device (default = true) 
     logQr: true // (Default is true) Logs QR automatically in terminal
     qrcode: (base64QR, asciiQR, urlCode) => {
     console.log("base64 image of qrcode: ", base64QR);
@@ -165,8 +165,7 @@ Get connection feedback by following codes:
 | `isLogout`           | The client has disconnected and removed the token from the device                                                                                                                              |
 | `isConnected`        | The client has successfully connected list                                                                                                                       |
 | `serverDisconnected`        | Disconnected for whatsapp socket server                                                                                                                  |
-
-
+| `isReconnected`        | notifies that it is connected so that you can check if it has been successfully connected                                                                                                                  |
 
 ## Download and Save Files
 
