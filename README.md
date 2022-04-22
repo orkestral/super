@@ -175,7 +175,6 @@ Download and save any message file with the functions below
 const client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
-  multidevice: true, // (default is false) for used whatsapp beta
   onMessage: async (message) => {
       if (message.isMedia === true) {
       
