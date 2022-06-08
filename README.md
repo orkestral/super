@@ -85,7 +85,7 @@ $ yarn add superchats
 ```javascript
 const superchats = require("superchats");
 
-const client = await superchats.create({
+let client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
   nodata: true,// It doesn't get the entire history of the device (default = true) 
@@ -174,7 +174,7 @@ Get connection feedback by following codes:
 Download and save any message file with the functions below
 
 ```javascript
-const client = await superchats.create({
+let client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
   onMessage: async (message) => {
