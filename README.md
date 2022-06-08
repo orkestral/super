@@ -88,7 +88,10 @@ const superchats = require("superchats");
 const client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
-  multidevice: true, // (default is false) for used whatsapp beta
+  nodata: true,// It doesn't get the entire history of the device (default = true) 
+  statusFind: (statusSession) => {
+    console.log("Status Session: ", statusSession);
+  },
   onMessage: async (message) => {
      if (message.type == "text" && message.content == "hi") {
        await client.sendText(message.from, "Thanks for using Superchats!!!");
