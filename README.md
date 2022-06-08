@@ -85,19 +85,30 @@ $ yarn add superchats
 ```javascript
 const superchats = require("superchats");
 
+async function start(){
 let client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
-  nodata: true,// It doesn't get the entire history of the device (default = true) 
-  statusFind: (statusSession) => {
-    console.log("Status Session: ", statusSession);
+  nodata: true,
+  statusFind: async (status) => {
+    console.log(status)
   },
   onMessage: async (message) => {
-     if (message.type == "text" && message.content == "hi") {
-       await client.sendText(message.from, "Thanks for using Superchats!!!");
+     if ((message.type == "text" || message.subtype == 'text')  && message.content == "hi") {
+       await client.sendText(message.from, "Let's GO Superchats");
      }
    }  // Receive an event all the time you receive a message from some contact
 })
+
+return client;
+
+}
+
+(async function(){
+  let client = await start();
+    let response = await client.sendText('0000000000000', 'Thanks for using Superchats!!!')
+    console.log(response)
+})()
 ```
 
 ## Multiples Sessions
