@@ -608,27 +608,6 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
 ```
 ### Send Message Buttons
 
-#### For Whatsapp Release
-
-```javascript
-
-  const buttons = [
-    {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
-    {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1}
-  ]
-
-  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional');
-
-```
-> To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
-
-```javascript
-  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional', '3EB01A690E67');
-```
-
-#### For Whatsapp Beta
-
-
 ```javascript
 const buttons = [
     {index: 1, quickReplyButton: {displayText: 'Button Normal Reply', id: 'id-123'}},
@@ -639,10 +618,10 @@ const buttons = [
 let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional');
 ```
 
-> To reply to a message with buttons, use the id of the message you want to reply to in the last parameter, which is optional.
+> Use media in message header of buttons, image or optional video parameter.
 
 ```javascript
-  let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional', '3EB01A690E67');
+  let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional', 'image', 'https://domain.com/image.jpg');
 ```
 ##### Return with success
 ```javascript
