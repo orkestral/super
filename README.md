@@ -688,7 +688,53 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   message: 'message of erro'
 }
 ```
-### Send Message Buttons
+
+### Send Buttons Reply
+
+```javascript
+  const buttons = [
+    {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
+    {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1}
+  ]
+  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional');
+```
+
+> Use media in message header of buttons, image or optional video parameter.
+
+```javascript
+  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional', 'image', 'https://domain.com/image.jpg');
+```
+##### Return with success
+```javascript
+{
+  session: 'Marketing',
+  status: 200,
+  type: 'buttons-reply',
+  id: '3EB071B7776A',
+  to: '556181590153',
+  title: 'title of message',
+  description: 'Description optional',
+  buttons: [
+    Button { buttonId: 'id1', buttonText: [ButtonText], type: 1 },
+    Button { buttonId: 'id2', buttonText: [ButtonText], type: 1 }
+  ],
+  isgroup: false,
+  timestamp: 1633142713
+}
+```
+
+##### Return with erro
+
+```javascript
+{
+  session: 'Marketing',
+  status: 404,
+  type: 'buttons-reply',
+  message: 'message of erro'
+}
+```
+
+### Send Message Buttons Actions
 
 
 ```javascript
