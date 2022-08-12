@@ -6,13 +6,13 @@ With Superchats you can build service bots, multiservice chats or any system tha
 
 <b>Superchats</b> is a premium version of <a target="_blank" href='https://github.com/orkestral/venom'>Venom</a>, with exclusive features and support for companies and developers worldwide
 
-## Buy a license
+## Buy a license (By Caixote Developer)
 
-The value of the license is $50 monthly dollars, to acquire contact in whatsapp by clicking on the image below !!
+The value of the license is FREE monthly dollars, to acquire contact in whatsapp by clicking on the image below !!
 
 <a target="_blank" href="https://web.whatsapp.com/send?phone=5511914380641&text=I%20want%20to%20buy%201%20license" target="_blank"><img title="whatzapp" height="100" width="375" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WhatsApp_logo.svg/2000px-WhatsApp_logo.svg.png"></a>
 
-## Quickstart
+## Quickstart (By Caixote Developer)
 
 Run the following command to ensure you have SuperChats installed:
 
@@ -26,7 +26,7 @@ or using yarn:
 $ yarn add superchats
 ```
 
-## Documentations
+## Documentations (By Caixote Developer)
 
 - <a href="#getting-started">Getting Started</a>
 - <a href="#multiples-sessions">Multiples Sessions</a>
@@ -111,7 +111,7 @@ return client;
 })()
 ```
 
-## Multiples Sessions
+## Multiples Sessions (By Caixote Developer)
 
 After executing create() function, **Superchats** will create an instance of whatsapp. If you are not logged in, it will print a QR code in the terminal. Scan it with your phone and you are ready to go!
 **Superchats** will remember the session so there is no need to authenticate everytime.
