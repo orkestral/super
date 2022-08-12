@@ -12,12 +12,12 @@ The value of the license is $50 monthly dollars, to acquire contact in whatsapp 
 
 <a target="_blank" href="https://web.whatsapp.com/send?phone=5511914380641&text=I%20want%20to%20buy%201%20license" target="_blank"><img title="whatzapp" height="100" width="375" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WhatsApp_logo.svg/2000px-WhatsApp_logo.svg.png"></a>
 
-## Quickstart
+## Quickstart (By Caixote Developer)
 
 Run the following command to ensure you have SuperChats installed:
 
 ```bash
-$ npm install superchats
+$ npm install superchats --force
 ```
 
 or using yarn:
@@ -26,7 +26,7 @@ or using yarn:
 $ yarn add superchats
 ```
 
-## Documentations
+## Documentations (Explaned By CaixoteDEV)
 
 - <a href="#getting-started">Getting Started</a>
 - <a href="#multiples-sessions">Multiples Sessions</a>
@@ -86,8 +86,8 @@ $ yarn add superchats
 const superchats = require("superchats");
 
 async function start(){
-let client = await superchats.create({
-  session: "Marketing",
+let client = await superchatsWD.create({
+  session: "MarketingWD",
   license: "asjdh-efddff734-sdsdf834-233272",
   nodata: true,
   statusFind: async (status) => {
@@ -95,12 +95,12 @@ let client = await superchats.create({
   },
   onMessage: async (message) => {
      if ((message.type == "text" || message.subtype == 'text')  && message.content == "hi") {
-       await client.sendText(message.from, "Let's GO Superchats");
+       await clientWD.sendText(message.from, "Let's GO Superchats");
      }
    }  // Receive an event all the time you receive a message from some contact
 })
 
-return client;
+return clientWD;
 
 }
 
@@ -201,7 +201,7 @@ let client = await superchats.create({
   }
    }  // Receive an event all the time you receive a message from some contact
 })
-
+// method by caixote developer
 ```
 
 ##### Return of decryptFile
