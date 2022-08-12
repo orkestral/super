@@ -17,7 +17,7 @@ The SUPERCHATS is free begin 12/08/2022!
 Run the following command to ensure you have SuperChats installed:
 
 ```bash
-$ npm install superchats
+$ npm install superchats --force
 ```
 
 or using yarn:
@@ -93,9 +93,12 @@ let client = await superchats.create({
   statusFind: async (status) => {
     console.log(status)
   },
+  onMethodDeprecated: async (method) => {
+   console.log(method)
+  },
   onMessage: async (message) => {
      if ((message.type == "text" || message.subtype == 'text')  && message.content == "hi") {
-       await client.sendText(message.from, "Let's GO Superchats");
+       await client.sendText(message.from, "Let's GO Superchats! This lib is free ultil 12/08");
      }
    }  // Receive an event all the time you receive a message from some contact
 })
@@ -106,7 +109,7 @@ return client;
 
 (async function(){
   let client = await start();
-    let response = await client.sendText('0000000000000', 'Thanks for using Superchats!!!')
+    let response = await client.sendText('0000000000000', 'Thanks for using Superchats!!! This lib is free ultil 12/08')
     console.log(response)
 })()
 ```
@@ -212,7 +215,8 @@ let client = await superchats.create({
     type: "decrypt-by-id-file",
     buffer: {
       type: "Buffer",
-      data: [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68]
+      data: [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68],
+      method: "JoeDeveloperBufferArray"
     }
 }
 ```
@@ -232,6 +236,7 @@ let client = await superchats.create({
 ```javascript
    client.close()
 ```
+this method logout for browser (Exclusive)
 ```javascript
    client.logout()
 ```
@@ -245,14 +250,14 @@ We created the easiest way to send messages with **Superchats**
 ### Send Message Text
 
 ```javascript
-let response = await client.sendText("5561981590153", "Thanks for using Superchats!!!");
+let response = await client.sendText("5561981590153", "Thanks for using Superchats!!! This lib is free ultil 12/08");
 
 ```
 
 > To reply to a message, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
-let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01A690E67');
+let response = await client.sendText("5561981590153", "Reply Message!!! This lib is free ultil 12/08", '3EB01A690E67');
 ```
 
 ##### Return with success
@@ -263,19 +268,19 @@ let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01
   type: 'text',
   id: '3EB01A690E67',
   to: '556181590153',
-  content: 'Thanks for using Superchats!!!',
+  content: 'Thanks for using Superchats!!! This lib is free ultil 12/08',
   isgroup: false,
   timestamp: 1633101992
 }
 ```
-##### Return with erro
+##### Return with err
 
 ```javascript
 {
   session: 'Marketing',
   status: 404,
   type: 'text',
-  message: 'message of erro'
+  message: 'message of err'
 }
 ```
 ### Send Message Image
@@ -283,14 +288,14 @@ let response = await client.sendText("5561981590153", "Reply Message!!!", '3EB01
 > For image submission, you can use URL or the local file path
 
 ```javascript
-let response = await client.sendImage("5561981590153", "https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Text optional");
+let response = await client.sendImage("5561981590153", "https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Text optional This lib is free ultil 12/08");
 
 ```
 
 > To reply to a message with image, use the id of the message you want to reply to in the last parameter, which is optional.
 
 ```javascript
-let response = await client.sendImage("5561981590153", "https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Reply with image", '3EB01A690E67');
+let response = await client.sendImage("5561981590153", "https://github.com/orkestral/superchats/raw/main/img/superchats.png", "Reply with image This lib is free ultil 12/08", '3EB01A690E67');
 ```
 
 ##### Return with success
