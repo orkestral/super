@@ -8,7 +8,7 @@ With Superchats you can build service bots, multiservice chats or any system tha
 
 ## Buy a license
 
-The value of the license is $50 monthly dollars, to acquire contact in whatsapp by clicking on the image below !!
+The SUPERCHATS is free begin 12/08/2022!
 
 <a target="_blank" href="https://web.whatsapp.com/send?phone=5511914380641&text=I%20want%20to%20buy%201%20license" target="_blank"><img title="whatzapp" height="100" width="375" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WhatsApp_logo.svg/2000px-WhatsApp_logo.svg.png"></a>
 
