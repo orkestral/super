@@ -1,0 +1,12 @@
+import makeWASocket from './Connection';
+import makeWALegacySocket from './FireSKT';
+export * from './Proto';
+export * from './Settings';
+export * from './Models';
+export * from './Mode';
+export * from './Internal';
+export declare type WALegacySocket = ReturnType<typeof makeWALegacySocket>;
+export { makeWALegacySocket };
+export declare type WASocket = ReturnType<typeof makeWASocket>;
+export declare type AnyWASocket = WASocket | WALegacySocket;
+export default makeWASocket;
