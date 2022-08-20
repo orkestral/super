@@ -149,6 +149,9 @@ superchats.create({
   onMessage: (event) => { // Receive an event all the time you receive a message from some contact
      console.log(event)
      },
+  onMessageFull: (event) => { // Receive an event all the time you receive a message complete no filters direct of socket do whatsapp
+     console.log(event)
+     },
   onAck: (event) => {    // Receive an event every time you send a message to some contact with the States of: failed, pending, sent, received or read
      console.log(event)
      },
