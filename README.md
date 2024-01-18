@@ -140,9 +140,10 @@ superchats.create({
     welcomeScreen: true, // Show or hide welcome in terminal
     retries: 3, // Number of connection attempts,
     nodata true, // It doesn't get the entire history of the device (default = true) 
-    logQr: true // (Default is true) Logs QR automatically in terminal
-    qr: true // If marked true uses the QR code instead of the pairing code
-    code: false // if marked true, uses the pairing code instead of the QR
+    logQr: true, // (Default is true) Logs QR automatically in terminal
+    qr: true, // If marked true uses the QR code instead of the pairing code
+    code: false, // if marked true, uses the pairing code instead of the QR
+    phoneNumber: "556185290357", // Number for pairing with WhatsApp alternative to QR
     qrcode: (sessionId, base64QR, asciiQR, urlCode) => {
     console.log("sessionId: " + sessionId)
     console.log("base64 image of qrcode: " + base64QR);
