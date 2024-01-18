@@ -90,6 +90,8 @@ let client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
   nodata: true,
+  qr: true,
+  code: false,
   statusFind: async (status) => {
     console.log(status)
   },
@@ -139,13 +141,21 @@ superchats.create({
     retries: 3, // Number of connection attempts,
     nodata true, // It doesn't get the entire history of the device (default = true) 
     logQr: true // (Default is true) Logs QR automatically in terminal
-    qrcode: (base64QR, asciiQR, urlCode) => {
-    console.log("base64 image of qrcode: ", base64QR);
-    console.log("Terminal image of qrcode in caracter ascii: ", asciiQR);
-    console.log("Terminal string hash of qrcode: ", urlCode);
+    qr: true // If marked true uses the QR code instead of the pairing code
+    code: false // if marked true, uses the pairing code instead of the QR
+    qrcode: (sessionId, base64QR, asciiQR, urlCode) => {
+    console.log("sessionId: " + sessionId)
+    console.log("base64 image of qrcode: " + base64QR);
+    console.log("Terminal image of qrcode in caracter ascii: " + asciiQR);
+    console.log("Terminal string hash of qrcode: " + urlCode);
+     },
+    pairing: (sessionId, code){
+    console.log("Session name: " + sessionId)
+    console.log("Pairing code: " + code)
+     }, 
     statusFind: (statusSession) => {
     console.log("Status Session: ", statusSession);
-  },
+     },
   onMessage: (event) => { // Receive an event all the time you receive a message from some contact
      console.log(event)
      },
@@ -195,10 +205,12 @@ let client = await superchats.create({
       if (message.isMedia === true) {
       
     //retrieve the file buffer for a given message
+    // Attention, use a delay of at least 2 seconds
+
     const buffer = await client.decryptByIdFile(message.from, message.id);
 
     // Save the message file in the project's root or in a directory: './diretory/filename' don't forget to create the directory
-    
+    // Attention, use a delay of at least 2 seconds
     const saveFile = await client.decryptByIdFileSave(message.from, message.id, filename);
    
   }
@@ -691,101 +703,6 @@ let response = await client.sendContact("5561981590153",'Name of Contact', '1581
   message: 'message of erro'
 }
 ```
-
-### Send Buttons Reply
-
-```javascript
-  const buttons = [
-    {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
-    {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1}
-  ]
-  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional');
-```
-
-> Use media in message header of buttons, image or optional video parameter.
-
-```javascript
-  let response = await client.sendButtons("5561981590153", "title of message", buttons, 'Description optional', 'image', 'https://domain.com/image.jpg');
-```
-##### Return with success
-```javascript
-{
-  session: 'Marketing',
-  status: 200,
-  type: 'buttons-reply',
-  id: '3EB071B7776A',
-  to: '556181590153',
-  title: 'title of message',
-  description: 'Description optional',
-  buttons: [
-    Button { buttonId: 'id1', buttonText: [ButtonText], type: 1 },
-    Button { buttonId: 'id2', buttonText: [ButtonText], type: 1 }
-  ],
-  isgroup: false,
-  timestamp: 1633142713
-}
-```
-
-##### Return with erro
-
-```javascript
-{
-  session: 'Marketing',
-  status: 404,
-  type: 'buttons-reply',
-  message: 'message of erro'
-}
-```
-
-### Send Message Buttons Actions
-
-
-```javascript
-const buttons = [
-    {index: 1, quickReplyButton: {displayText: 'Button Normal Reply', id: 'id-123'}},
-    {index: 2, callButton: {displayText: 'Button Call', phoneNumber: '+55 (61) 98159-0153'}},
-    {index: 3, urlButton: {displayText: 'Button Link', url: 'https://stuidomedia.io'}},
-]
-
-let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional');
-```
-
-> Use media in message header of buttons, image or optional video parameter.
-
-```javascript
-  let response = await client.sendButtonsMD("5561981590153", "title of message", buttons, 'Description optional', 'image', 'https://domain.com/image.jpg');
-```
-##### Return with success
-```javascript
-{
-  session: 'Marketing',
-  status: 200,
-  type: 'buttons',
-  id: '3EB071B7776A',
-  to: '556181590153',
-  title: 'title of message',
-  description: 'Description optional',
-  buttons: [
-    Button { buttonId: 'id1', buttonText: [ButtonText], type: 1 },
-    Button { buttonId: 'id2', buttonText: [ButtonText], type: 1 }
-  ],
-  isgroup: false,
-  timestamp: 1633142713
-}
-```
-
-##### Return with erro
-
-```javascript
-{
-  session: 'Marketing',
-  status: 404,
-  type: 'buttons',
-  message: 'message of erro'
-}
-```
-
-
 
 ### Send Message List
 > Attention! This function does not work if connected to a WhatsApp Business account
