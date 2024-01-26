@@ -90,10 +90,14 @@ let client = await superchats.create({
   session: "Marketing",
   license: "asjdh-efddff734-sdsdf834-233272",
   nodata: true,
+  logQr: false,
   qr: true,
   code: false,
   statusFind: async (status) => {
     console.log(status)
+  },
+  qrcode: async (session, base64Img, asciiQR, urlCode) => {
+  console.log(asciiQR)
   },
   onMessage: async (message) => {
      if ((message.type == "text" || message.subtype == 'text')  && message.content == "hi") {
